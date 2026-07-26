@@ -71,6 +71,7 @@ class CookidooClient:
 
         self._base_url = const.ENV_HOST_TEMPLATES[environment].format(market=self._market.market_code.lower())
         self._auth = Authenticator(email, password, self._market.market_code, ui_locale=self._language)
+        self._timeout = timeout
         self._owns_http = http is None
         self._http = http or httpx.AsyncClient(
             timeout=timeout,
@@ -186,7 +187,20 @@ class CookidooClient:
     async def login(self) -> Token:
         """Authenticate and store a token. Auto-corrects the market if needed."""
         authorize, token_url = await self.oidc_endpoints()
-        self._token = await self._auth.login(self._http, authorize, token_url)
+        # Run the OAuth "browser" dance (authorize -> login -> callback) on an
+        # isolated client with its own cookie jar. Reusing a shared client (e.g.
+        # Home Assistant's) would let a leftover CIAM session cookie make /authorize
+        # skip the login page and redirect straight to the custom-scheme callback,
+        # which httpx cannot follow. Only the resulting bearer token is needed for
+        # the actual API calls (made on self._http).
+        async with httpx.AsyncClient(
+            timeout=self._timeout,
+            headers={
+                "User-Agent": const.USER_AGENT,
+                "Accept-Language": self._language,
+            },
+        ) as auth_http:
+            self._token = await self._auth.login(auth_http, authorize, token_url)
         _LOGGER.info("Logged in as %s", self._token.user.email if self._token.user else "?")
         return self._token
 
