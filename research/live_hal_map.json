@@ -1,0 +1,2692 @@
+{
+  "_root": {
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api?rel={rel}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/.well-known/home",
+      "templated": false
+    },
+    "tmde2:firmware": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/firmware/.well-known/home",
+      "templated": false
+    },
+    "tmde2:search": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/.well-known/home",
+      "templated": false
+    },
+    "tmde2:recipe-details": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipes/recipe/.well-known/home",
+      "templated": false
+    },
+    "tmde2:recipe-feed-v2": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/recipes/feed-v2/.well-known/recipes/home",
+      "templated": false
+    },
+    "tmde2:collection-feed-v2": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/recipes/feed-v2/.well-known/collections/home",
+      "templated": false
+    },
+    "tmde2:organize": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/.well-known/home",
+      "templated": false
+    },
+    "tmde2:collections": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/collection/.well-known/home",
+      "templated": false
+    },
+    "tmde2:planning": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/.well-known/home",
+      "templated": false
+    },
+    "tmde2:foundation": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/.well-known/home",
+      "templated": false
+    },
+    "tmde2:foundation-tutorials": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/tutorials/.well-known/home",
+      "templated": false
+    },
+    "tmde2:customer-devices": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/.well-known/home",
+      "templated": false
+    },
+    "tmde2:profile": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/profile/.well-known/home",
+      "templated": false
+    },
+    "tmde2:ownership": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/ownership/.well-known/home",
+      "templated": false
+    },
+    "tmde2:commerce": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/.well-known/home",
+      "templated": false
+    },
+    "tmde2:usagebox": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/usagebox/.well-known/home",
+      "templated": false
+    },
+    "tmde2:auth": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/ciam/.well-known/home/mobile",
+      "templated": false
+    },
+    "tmde2:pantry": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/.well-known/home",
+      "templated": false
+    },
+    "tmde2:rating": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/rating/.well-known/home",
+      "templated": false
+    },
+    "tmde2:recommender": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/.well-known/home",
+      "templated": false
+    },
+    "tmde2:community-profile": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/community/profile/.well-known/home",
+      "templated": false
+    },
+    "tmde2:customer-recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/.well-known/home",
+      "templated": false
+    },
+    "tmde2:mobile-purchases": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/.well-known/home",
+      "templated": false
+    },
+    "tmde2:mobile-notification": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/notification-center/.well-known/home",
+      "templated": false
+    },
+    "tmde2:reactivation": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/reactivation/.well-known/home",
+      "templated": false
+    },
+    "tmde2:recipe-notes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipe-notes/.well-known/home",
+      "templated": false
+    },
+    "tmde2:consent": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/.well-known/home",
+      "templated": false
+    },
+    "tmde2:copilot": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/.well-known/home",
+      "templated": false
+    },
+    "tmde2:mobile-config": {
+      "href": "https://mobile-config.prod.cookidoo.vorwerk-digital.com/.well-known/home",
+      "templated": false
+    },
+    "tmde2:rmi-config": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/rmi-config/.well-known/home",
+      "templated": false
+    }
+  },
+  "tmde2:firmware": {
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/firmware/.well-known/home",
+      "templated": false
+    },
+    "firmware:update": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/firmware/update?version={version}",
+      "templated": true
+    },
+    "firmware:tmd": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/firmware/tmd/update?id={id}&hardwareVersion={hardwareVersion}&firmwareVersion={firmwareVersion}",
+      "templated": true
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/firmware/.well-known/info",
+      "templated": false
+    },
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api/?spec-url=/firmware/specs/openapi.yaml#{rel}",
+      "templated": true
+    }
+  },
+  "tmde2:search": {
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/.well-known/home",
+      "templated": false
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/.well-known/info",
+      "templated": false
+    },
+    "specs": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/.well-known/specs",
+      "templated": false
+    },
+    "search:healthcheck": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/.well-known/health-check",
+      "templated": false
+    },
+    "search:home": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/{lang}{?query,context,filters*,focus,pagination,limit}",
+      "templated": true
+    },
+    "search:searchapi": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/api/{lang}/search{?query,context,filters*,focus,pagination,limit}",
+      "templated": true
+    },
+    "search:ingredientapi": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/api/ingredients{?query,filters*,language,limit}",
+      "templated": true
+    },
+    "search:home-with-filters-exploded": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/{lang}{?query,context,focus,pagination,limit,tags,categories,ratings,preparationTime,portions,difficulty,totalTime,tmv,countries,languages,additionalDevices,accessories,sortby,ids,ingredients,excludeIngredients,excludeTags,exclude,like}",
+      "templated": true
+    },
+    "fint:home": {
+      "href": "/search/{lang}{?query,context,filters*}",
+      "templated": true
+    },
+    "fint:searchapi": {
+      "href": "/search/api/{lang}/search{?query,context,filters*,pagination,limit}",
+      "templated": true
+    },
+    "fint:ingredientapi": {
+      "href": "/search/api/ingredients{?query,filters*,language,limit}",
+      "templated": true
+    },
+    "fint:home-with-filters-exploded": {
+      "href": "/search/{lang}{?query,context,focus,pagination,limit,tags,categories,ratings,preparationTime,portions,difficulty,totalTime,tmv,countries,languages,additionalDevices,accessories,sortby,ids,ingredients,excludeIngredients,excludeTags,exclude,like}",
+      "templated": true
+    },
+    "search:stripe": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/{lang}/fragments/stripe{?query,context,limit,exclude,includeRating,lazyLoading,filters*}",
+      "templated": true
+    },
+    "search:stripeapi": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/api/{lang}/stripe{?query,context,like,limit,exclude,sortby,ids,includeRating,lazyLoading,filters*}",
+      "templated": true
+    },
+    "fint:stripe": {
+      "href": "/search/{lang}/fragments/stripe{?query,context,like,limit,exclude,sortby,includeRating,lazyLoading,filters*}",
+      "templated": true
+    },
+    "fint:stripeapi": {
+      "href": "/search/api/{lang}/stripe{?query,context,like,limit,exclude,sortby,ids,includeRating,lazyLoading,filters*}",
+      "templated": true
+    },
+    "search:stripe-by-ids": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/{lang}/fragments/stripe{?query,context,like,limit,exclude,sortby,ids,includeRating,lazyLoading,filters*}",
+      "templated": true
+    },
+    "fint:stripe-by-ids": {
+      "href": "/search/{lang}/fragments/stripe{?query,context,like,limit,exclude,sortby,ids,includeRating,lazyLoading,filters*}",
+      "templated": true
+    },
+    "search:stripe-by-like": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/{lang}/fragments/stripe{?query,context,like,limit,exclude,sortby,includeRating,lazyLoading,filters*}",
+      "templated": true
+    },
+    "fint:stripe-by-like": {
+      "href": "/search/{lang}/fragments/stripe{?query,context,like,limit,exclude,sortby,includeRating,lazyLoading,filters*}",
+      "templated": true
+    },
+    "search:hero-search": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/{lang}/fragments/hero-search",
+      "templated": true
+    },
+    "fint:hero-search": {
+      "href": "/search/{lang}/fragments/hero-search",
+      "templated": true
+    },
+    "search:with-query": {
+      "href": "/search/{lang}?{+query}",
+      "templated": true
+    },
+    "search:with-query-with-host": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/{lang}?{+query}",
+      "templated": true
+    },
+    "search:for-term-with-defaults": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/for-term?{query}",
+      "templated": true
+    },
+    "fint:for-term-with-defaults": {
+      "href": "/search/for-term?{query}",
+      "templated": true
+    },
+    "search:insight:converted-object-ids-after-search": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/insight/converted-object-ids-after-search",
+      "templated": false
+    },
+    "fint:insight:converted-object-ids-after-search": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/insight/converted-object-ids-after-search",
+      "templated": false
+    },
+    "search:subscription-algolia-token": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/api/subscription/token",
+      "templated": false
+    },
+    "fint:subscription-algolia-token": {
+      "href": "/search/api/subscription/token",
+      "templated": false
+    },
+    "search:search-config": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/search/api/search-config?version={version}",
+      "templated": true
+    }
+  },
+  "tmde2:recipe-details": {
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipes/recipe/.well-known/home",
+      "templated": false
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipes/recipe/.well-known/info",
+      "templated": false
+    },
+    "recipe:details": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipes/recipe{/lang}/{id}",
+      "templated": true
+    },
+    "fint:details": {
+      "href": "/recipes/recipe{/lang}/{id}",
+      "templated": true
+    },
+    "recipe:details-devices-and-accessories-section": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipes/recipe/{lang}/{id}#devices-and-accessories-section",
+      "templated": true
+    },
+    "fint:details-devices-and-accessories-section": {
+      "href": "/recipes/recipe/{lang}/{id}#devices-and-accessories-section",
+      "templated": true
+    },
+    "recipe:recipe-collections": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipes/recipe/{lang}/{id}/collections",
+      "templated": true
+    },
+    "fint:recipe-collections": {
+      "href": "/recipes/recipe/{lang}/{id}/collections",
+      "templated": true
+    },
+    "recipe:recipe-report-submit": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipes/recipe/{lang}/{id}/report",
+      "templated": true
+    },
+    "fint:recipe-report-submit": {
+      "href": "/recipes/recipe/{lang}/{id}/report",
+      "templated": true
+    },
+    "recipe:recipe-report-questionnaire": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipes/recipe/{lang}/{id}/report/questionnaire",
+      "templated": true
+    },
+    "fint:recipe-report-questionnaire": {
+      "href": "/recipes/recipe/{lang}/{id}/report/questionnaire",
+      "templated": true
+    },
+    "recipe-variants": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipes/cluster/{clusterId}",
+      "templated": true
+    },
+    "fint:recipe-variants": {
+      "href": "/recipes/cluster/{clusterId}",
+      "templated": true
+    },
+    "recipe-variants-v2": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipes/cluster/2/{clusterId}",
+      "templated": true
+    },
+    "fint:recipe-variants-v2": {
+      "href": "/recipes/cluster/2/{clusterId}",
+      "templated": true
+    }
+  },
+  "tmde2:recipe-feed-v2": {
+    "rf:recipes-bootstrap": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/recipes/feed-v2/recipes/bootstrap{?after}",
+      "templated": true
+    },
+    "rf:recipes-feed": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/recipes/feed-v2/recipes{?after,limit}",
+      "templated": true
+    },
+    "rf:recipes-feed-page": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/recipes/feed-v2/recipes/pages?pageBefore={pageBefore}{&limit}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/recipes/feed-v2/.well-known/recipes/home",
+      "templated": false
+    },
+    "specs": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/recipes/feed-v2/.well-known/recipes/specs",
+      "templated": false
+    },
+    "curies": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/api/?spec-url=/specs/recipe-feed-5.6.yaml#{rel}",
+      "templated": true
+    }
+  },
+  "tmde2:collection-feed-v2": {
+    "cf:collections-bootstrap": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/recipes/feed-v2/collections/bootstrap{?after}",
+      "templated": true
+    },
+    "cf:collections-feed": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/recipes/feed-v2/collections{?after,limit}",
+      "templated": true
+    },
+    "cf:collections-feed-page": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/recipes/feed-v2/collections/pages?pageBefore={pageBefore}{&limit}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/recipes/feed-v2/.well-known/collections/home",
+      "templated": false
+    },
+    "specs": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/recipes/feed-v2/.well-known/collections/specs",
+      "templated": false
+    },
+    "curies": {
+      "href": "https://web.production-eu.cookidoo.vorwerk-digital.com/api/?spec-url=/specs/collection-feed-5.6.yml#{rel}",
+      "templated": true
+    }
+  },
+  "tmde2:organize": {
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api/?spec-url=/api/specs/organize_0.19.9.json#Organize-1#{rel}",
+      "templated": true
+    },
+    "fint:api-retrieve-shared-list": {
+      "href": "/organize/{lang}/api/shared-list/{sharedListId}",
+      "templated": true
+    },
+    "organize:api-share-custom-list": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/{lang}/api/shared-list",
+      "templated": true
+    },
+    "organize:api-custom-list": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/{lang}/api/custom-list",
+      "templated": true
+    },
+    "fint:transclude-move-to-list-modal": {
+      "href": "/organize/{lang}/transclude/move-to-list-modal",
+      "templated": true
+    },
+    "specs": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/.well-known/specs",
+      "templated": false
+    },
+    "fint:transclude-manage-custom-list": {
+      "href": "/organize/{lang}/transclude/manage-custom-list/{recipeId}",
+      "templated": true
+    },
+    "fint:transclude-create-custom-list-modal": {
+      "href": "/organize/{lang}/transclude/create-custom-list-modal/{recipeId}",
+      "templated": true
+    },
+    "fint:web-my-recipes": {
+      "href": "/organize/{lang}/my-recipes",
+      "templated": true
+    },
+    "organize:api-bookmark": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/{lang}/api/bookmark",
+      "templated": true
+    },
+    "organize:api-associated-recipe-list": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/{lang}/api/associated-recipes",
+      "templated": true
+    },
+    "fint:transclude-save-collection": {
+      "href": "/organize/{lang}/transclude/save-collection/{collectionId}",
+      "templated": true
+    },
+    "fint:api-revoke-custom-list": {
+      "href": "/organize/{lang}/api/shared-list/{sharedListId}",
+      "templated": true
+    },
+    "organize:api-cooking-history-multiple": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/{lang}/api/cooking-history/multiple",
+      "templated": true
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/.well-known/info",
+      "templated": false
+    },
+    "fint:transclude-manage-bookmark-icon": {
+      "href": "/organize/{lang}/transclude/manage-bookmark-icon/{recipeId}",
+      "templated": true
+    },
+    "organize:api-list-sync-all": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/api/list-sync/{type}",
+      "templated": true
+    },
+    "fint:transclude-manage-bookmark": {
+      "href": "/organize/{lang}/transclude/manage-bookmark/{recipeId}",
+      "templated": true
+    },
+    "organize:api-managed-list-single": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/{lang}/api/managed-list/{id}",
+      "templated": true
+    },
+    "organize:api-cooking-history": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/{lang}/api/cooking-history",
+      "templated": true
+    },
+    "organize:move-recipe": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/{lang}/api/move-recipe",
+      "templated": true
+    },
+    "organize:api-list-sync": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/api/list-sync/{type}/{id}",
+      "templated": true
+    },
+    "organize:api-managed-list": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/{lang}/api/managed-list",
+      "templated": true
+    },
+    "organize:api-custom-list-modify": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/{lang}/api/custom-list/{id}",
+      "templated": true
+    },
+    "organize:web-my-recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/{lang}/my-recipes",
+      "templated": true
+    },
+    "organize:api-custom-list-recipe": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/{lang}/api/custom-list/{id}/recipes/{recipeId}",
+      "templated": true
+    },
+    "fint:api-copy-shared-list": {
+      "href": "/organize/{lang}/api/custom-list-copy",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/organize/.well-known/home",
+      "templated": false
+    },
+    "fint:transclude-manage-custom-list-modal": {
+      "href": "/organize/{lang}/transclude/manage-custom-list-modal/{recipeId}",
+      "templated": true
+    }
+  },
+  "tmde2:collections": {
+    "collection:collection-details": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/collection/{lang}/p/{code}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/collection/.well-known/home",
+      "templated": false
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/collection/.well-known/info",
+      "templated": false
+    },
+    "fint:collection-details": {
+      "href": "/collection/{lang}/p/{code}",
+      "templated": true
+    }
+  },
+  "tmde2:planning": {
+    "fint:web-my-week": {
+      "href": "/planning/{lang}/my-week{?backButtonLoadsPreviousWidget}",
+      "templated": true
+    },
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api/?spec-url=/api/specs/organize_0.19.9.json#Organize-1#{rel}",
+      "templated": true
+    },
+    "planning:api-my-day-enhanced": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-day-enhanced",
+      "templated": true
+    },
+    "planning:api-remove-recipe": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-day/{dayKey}/recipes/{recipeId}?recipeSource={recipeSource}",
+      "templated": true
+    },
+    "planning:api-my-day-enhanced-recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-day-enhanced/{dayKey}/recipes/{recipeId}?mealTime={mealTime}",
+      "templated": true
+    },
+    "planning:api-my-day": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-day",
+      "templated": true
+    },
+    "fint:api-my-day": {
+      "href": "/planning/{lang}/api/my-day",
+      "templated": true
+    },
+    "planning:api-my-day-recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-day/{dayKey}/recipes/{recipeId}",
+      "templated": true
+    },
+    "specs": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/.well-known/specs",
+      "templated": false
+    },
+    "planning:api-my-week-enhanced-from-date": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-week-enhanced/{dayKey}",
+      "templated": true
+    },
+    "planning:api-my-day-enhanced-at-date": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-day-enhanced/{dayKey}",
+      "templated": true
+    },
+    "planning:api-my-day-enhanced-remove": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-day-enhanced/{dayKey}",
+      "templated": true
+    },
+    "fint:transclude-planned-recipes": {
+      "href": "/planning/{lang}/transclude/planned-recipes/{dayKey}",
+      "templated": true
+    },
+    "planning:api-my-day-move-recipe": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-day/move-recipe",
+      "templated": true
+    },
+    "fint:transclude-manage-add-to-my-week": {
+      "href": "/planning/{lang}/transclude/manage-add-to-myweek/{recipeId}{?recipeSource}",
+      "templated": true
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/.well-known/info",
+      "templated": false
+    },
+    "planning:api-my-week": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-week",
+      "templated": true
+    },
+    "fint:transclude-manage-cook-today": {
+      "href": "/planning/{lang}/transclude/manage-cook-today/{recipeId}{?recipeSource}",
+      "templated": true
+    },
+    "planning:api-list-sync": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/list-sync/{type}/{id}",
+      "templated": true
+    },
+    "planning:api-my-week-enhanced": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-week-enhanced",
+      "templated": true
+    },
+    "planning:api-my-day-enhanced-move-recipe": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-day-enhanced/move-recipe",
+      "templated": true
+    },
+    "planning:api-my-week-from-date": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-week/{dayKey}",
+      "templated": true
+    },
+    "planning:api-list-sync-all": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/list-sync/{type}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/.well-known/home",
+      "templated": false
+    },
+    "planning:web-my-week": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/my-week",
+      "templated": true
+    },
+    "planning:api-my-day-at-date": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/my-day/{dayKey}",
+      "templated": true
+    },
+    "planning:api-associated-recipe-list": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/planning/{lang}/api/associated-recipes",
+      "templated": true
+    }
+  },
+  "tmde2:foundation": {
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api/?spec-url=/foundation/.well-known/documentation#{rel}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/.well-known/home",
+      "templated": false
+    },
+    "healthcheck": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/.well-known/health-check",
+      "templated": false
+    },
+    "foundation:cookie-policy": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/cookie-policy",
+      "templated": true
+    },
+    "foundation:european-accessibility-act": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/european-accessibility-act",
+      "templated": true
+    },
+    "foundation:subscription": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/partials/subscription/{dcid}",
+      "templated": true
+    },
+    "foundation:mobile-compatibility-qrcode": {
+      "href": "https://cookidoo.co.uk/internalurl?url=https%3A%2F%2Fcookidoo.mx%2Ffoundation%2F{lang}%2Fthermomix-compatibility%26utensilId%3D{utensilId}",
+      "templated": true
+    },
+    "foundation:mobile-for-you-page-portal-api": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/for-you-portal/{lang}/for-you-page",
+      "templated": true
+    },
+    "foundation:mobile-for-you-page-layout-api-v2": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/mobileForYouPageLayoutV2",
+      "templated": true
+    },
+    "foundation:my-advisor-api": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/advisors/{dcid}",
+      "templated": true
+    },
+    "fint:my-advisor-api": {
+      "href": "/foundation/{lang}/api/advisors/{dcid}",
+      "templated": true
+    },
+    "foundation:my-advisor": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/my-advisor",
+      "templated": true
+    },
+    "fint:my-advisor": {
+      "href": "/foundation/{lang}/my-advisor",
+      "templated": true
+    },
+    "foundation:advisor-demo-api": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/advisorDemo/{id}?country={country}&prerequisites={prerequisites}",
+      "templated": true
+    },
+    "fint:advisor-demo-api": {
+      "href": "/foundation/{lang}/api/content/advisorDemo/{id}?country={country}&prerequisites={prerequisites}",
+      "templated": true
+    },
+    "foundation:advisor-demo-page-api": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/advisorDemoPage?country={country}",
+      "templated": true
+    },
+    "fint:advisor-demo-page-api": {
+      "href": "/foundation/{lang}/api/content/advisorDemoPage?country={country}",
+      "templated": true
+    },
+    "foundation:advisor-demo-page-api-v2": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/advisorDemoPage?country={country}&prerequisites={prerequisites}",
+      "templated": true
+    },
+    "fint:advisor-demo-page-api-v2": {
+      "href": "/foundation/{lang}/api/content/advisorDemoPage?country={country}&prerequisites={prerequisites}",
+      "templated": true
+    },
+    "foundation:blade-cover-article": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/pages/discover-blade-cover-with-peeler",
+      "templated": true
+    },
+    "fint:blade-cover-article": {
+      "href": "/foundation/{lang}/pages/discover-blade-cover-with-peeler",
+      "templated": true
+    },
+    "foundation:benefits": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/benefits",
+      "templated": true
+    },
+    "fint:benefits": {
+      "href": "/foundation/{lang}/benefits",
+      "templated": true
+    },
+    "foundation:components": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/partials/components{?ids}",
+      "templated": true
+    },
+    "fint:components": {
+      "href": "/foundation/{lang}/partials/components{?ids}",
+      "templated": true
+    },
+    "foundation:cookidoo-served": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/partials/cookidoo-served/{dcid}",
+      "templated": true
+    },
+    "fint:cookidoo-served": {
+      "href": "/foundation/{lang}/partials/cookidoo-served/{dcid}",
+      "templated": true
+    },
+    "foundation:created-recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/pages/discover-created-recipes",
+      "templated": true
+    },
+    "fint:created-recipes": {
+      "href": "/foundation/{lang}/pages/discover-created-recipes",
+      "templated": true
+    },
+    "foundation:disclaimer": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/disclaimer",
+      "templated": true
+    },
+    "fint:disclaimer": {
+      "href": "/foundation/{lang}/disclaimer",
+      "templated": true
+    },
+    "foundation:explore-mobile": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/mobile{?initialActiveTab}",
+      "templated": true
+    },
+    "fint:explore-mobile": {
+      "href": "/foundation/{lang}/mobile{?initialActiveTab}",
+      "templated": true
+    },
+    "foundation:explore-nwot": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/device",
+      "templated": true
+    },
+    "fint:explore-nwot": {
+      "href": "/foundation/{lang}/device",
+      "templated": true
+    },
+    "foundation:explore-web": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/explore",
+      "templated": true
+    },
+    "fint:explore-web": {
+      "href": "/foundation/{lang}/explore",
+      "templated": true
+    },
+    "foundation:footer": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/partials/footer{?page}",
+      "templated": true
+    },
+    "fint:footer": {
+      "href": "/foundation/{lang}/partials/footer{?page}",
+      "templated": true
+    },
+    "foundation:for-you-web": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/for-you",
+      "templated": true
+    },
+    "fint:for-you-web": {
+      "href": "/foundation/{lang}/for-you",
+      "templated": true
+    },
+    "foundation:foundation-web": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}",
+      "templated": true
+    },
+    "fint:foundation-web": {
+      "href": "/foundation/{lang}",
+      "templated": true
+    },
+    "foundation:get-subscription": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/get-subscription",
+      "templated": true
+    },
+    "fint:get-subscription": {
+      "href": "/foundation/{lang}/get-subscription",
+      "templated": true
+    },
+    "foundation:help": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/help",
+      "templated": true
+    },
+    "fint:help": {
+      "href": "/foundation/{lang}/help",
+      "templated": true
+    },
+    "foundation:imprint": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/imprint",
+      "templated": true
+    },
+    "fint:imprint": {
+      "href": "/foundation/{lang}/imprint",
+      "templated": true
+    },
+    "foundation:membership": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/membership",
+      "templated": true
+    },
+    "fint:membership": {
+      "href": "/foundation/{lang}/membership",
+      "templated": true
+    },
+    "foundation:mobile-for-you-page-api": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/mobileForYouPage{?country,clusterdata*}",
+      "templated": true
+    },
+    "fint:mobile-for-you-page-api": {
+      "href": "/foundation/{lang}/api/content/mobileForYouPage{?country,clusterdata*}",
+      "templated": true
+    },
+    "foundation:mobile-for-you-page-layout-api": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/mobileForYouPageLayout",
+      "templated": true
+    },
+    "fint:mobile-for-you-page-layout-api": {
+      "href": "/foundation/{lang}/api/content/mobileForYouPageLayout",
+      "templated": true
+    },
+    "foundation:mode-tips-api": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/modeTips/{id}?country={country}&prerequisites={prerequisites}",
+      "templated": true
+    },
+    "fint:mode-tips-api": {
+      "href": "/foundation/{lang}/api/content/modeTips/{id}?country={country}&prerequisites={prerequisites}",
+      "templated": true
+    },
+    "foundation:report-content": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/report-content",
+      "templated": true
+    },
+    "fint:report-content": {
+      "href": "/foundation/{lang}/report-content",
+      "templated": true
+    },
+    "foundation:scaled-recipes-article": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/articles/scaled-recipes",
+      "templated": true
+    },
+    "fint:scaled-recipes-article": {
+      "href": "/foundation/{lang}/articles/scaled-recipes",
+      "templated": true
+    },
+    "foundation:spotlight-recipes-api": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/spotlightRecipes?country={country}",
+      "templated": true
+    },
+    "fint:spotlight-recipes-api": {
+      "href": "/foundation/{lang}/api/content/spotlightRecipes?country={country}",
+      "templated": true
+    },
+    "fint:subscription": {
+      "href": "/foundation/{lang}/partials/subscription/{dcid}",
+      "templated": true
+    },
+    "foundation:subscription-content": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/partials/subscription-content{?ids}",
+      "templated": true
+    },
+    "fint:subscription-content": {
+      "href": "/foundation/{lang}/partials/subscription-content{?ids}",
+      "templated": true
+    },
+    "foundation:thermomix-compatibility": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/thermomix-compatibility",
+      "templated": true
+    },
+    "fint:thermomix-compatibility": {
+      "href": "/foundation/{lang}/thermomix-compatibility",
+      "templated": true
+    },
+    "foundation:thermomix-friend": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/thermomix-friend",
+      "templated": true
+    },
+    "fint:thermomix-friend": {
+      "href": "/foundation/{lang}/thermomix-friend",
+      "templated": true
+    },
+    "foundation:topic-tiles": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/partials/topic-tiles/{page}",
+      "templated": true
+    },
+    "fint:topic-tiles": {
+      "href": "/foundation/{lang}/partials/topic-tiles/{page}",
+      "templated": true
+    },
+    "foundation:tutorial-api": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/tutorial/{id}?country={country}&prerequisites={prerequisites}",
+      "templated": true
+    },
+    "fint:tutorial-api": {
+      "href": "/foundation/{lang}/api/content/tutorial/{id}?country={country}&prerequisites={prerequisites}",
+      "templated": true
+    },
+    "foundation:tutorial-page-api": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/tutorialPage?country={country}",
+      "templated": true
+    },
+    "fint:tutorial-page-api": {
+      "href": "/foundation/{lang}/api/content/tutorialPage?country={country}",
+      "templated": true
+    },
+    "foundation:tutorial-page-api-v2": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/tutorialPage?country={country}&prerequisites={prerequisites}",
+      "templated": true
+    },
+    "fint:tutorial-page-api-v2": {
+      "href": "/foundation/{lang}/api/content/tutorialPage?country={country}&prerequisites={prerequisites}",
+      "templated": true
+    },
+    "foundation:tutorial-page-full-api": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/tutorialPageFull?country={country}",
+      "templated": true
+    },
+    "fint:tutorial-page-full-api": {
+      "href": "/foundation/{lang}/api/content/tutorialPageFull?country={country}",
+      "templated": true
+    },
+    "foundation:tutorial-page-full-api-v2": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/tutorialPageFull?country={country}&prerequisites={prerequisites}",
+      "templated": true
+    },
+    "fint:tutorial-page-full-api-v2": {
+      "href": "/foundation/{lang}/api/content/tutorialPageFull?country={country}&prerequisites={prerequisites}",
+      "templated": true
+    },
+    "foundation:landing-page-api": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/tm7LandingPage/{id}?country={country}",
+      "templated": true
+    },
+    "fint:landing-page-api": {
+      "href": "/foundation/{lang}/api/content/tm7LandingPage/{id}?country={country}",
+      "templated": true
+    },
+    "foundation:landing-page-api-ds360": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/{lang}/api/content/tm7LandingPage?landingPageUrl={url}",
+      "templated": true
+    },
+    "fint:landing-page-api-ds360": {
+      "href": "/foundation/{lang}/api/content/tm7LandingPage?landingPageUrl={url}",
+      "templated": true
+    }
+  },
+  "tmde2:foundation-tutorials": {
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api/?spec-url=/foundation/tutorials/.well-known/documentation/#{rel}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/tutorials/.well-known/home",
+      "templated": false
+    },
+    "foundation-tutorials:health-check": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/tutorials/.well-known/health-check",
+      "templated": false
+    },
+    "foundation-tutorials:main-page": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/tutorials/{lang}",
+      "templated": true
+    },
+    "fint:main-page": {
+      "href": "/foundation/tutorials/{lang}",
+      "templated": true
+    },
+    "foundation-tutorials:course-page": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/foundation/tutorials/{lang}/courses/{course}/{chapter}",
+      "templated": true
+    },
+    "fint:course-page": {
+      "href": "/foundation/tutorials/{lang}/courses/{course}/{chapter}",
+      "templated": true
+    }
+  },
+  "tmde2:customer-devices": {
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api/?spec-url=/api/specs/customerDevice_0.0.2.json#{rel}",
+      "templated": true
+    },
+    "customer-devices:api-accessory-link": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/accessory/link",
+      "templated": false
+    },
+    "customer-devices:api-deactivate": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/connected-device/links",
+      "templated": false
+    },
+    "customer-devices:api-backoffice-connected-devices": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/internal/api/backoffice/customers/{dcid}/connected-devices",
+      "templated": true
+    },
+    "customer-devices:thermomix-versions": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/my-devices/versions",
+      "templated": false
+    },
+    "customer-devices:api-my-accessories-add": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/accessory/link",
+      "templated": false
+    },
+    "fint:cook-key-link": {
+      "href": "/customer-devices/{lang}/cook-key/link",
+      "templated": true
+    },
+    "customer-devices:feed-user-device-id-bootstrap": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/user-device-id/feed/bootstrap{?after}",
+      "templated": true
+    },
+    "customer-devices:api-activation-status": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/connected-device/links",
+      "templated": false
+    },
+    "specs": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/.well-known/specs",
+      "templated": false
+    },
+    "fint:my-devices-page-cd2": {
+      "href": "/customer-devices/{lang}/my-devices",
+      "templated": true
+    },
+    "customer-devices:api-my-accessories-ids": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/accessory/ids",
+      "templated": false
+    },
+    "customer-devices:api-accessory-ids": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/accessory/ids",
+      "templated": false
+    },
+    "customer-devices:feed-user-cook-key-id-bootstrap": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/cook-key/feed/bootstrap{?after}",
+      "templated": true
+    },
+    "customer-devices:api-my-accessories": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/accessory",
+      "templated": false
+    },
+    "customer-devices:api-backoffice-connected-device-link": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/internal/api/backoffice/customers/{dcid}/connected-devices/{deviceIdentifier}",
+      "templated": true
+    },
+    "customer-devices:api-customer-activations": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/internal/api/connected-device/links",
+      "templated": false
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/.well-known/info",
+      "templated": false
+    },
+    "fint:onboarding-select-thermomix": {
+      "href": "/customer-devices/{lang}/onboarding/my-devices",
+      "templated": true
+    },
+    "customer-devices:api-accessory-catalog-item": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/accessory/catalog/{accessoryId}{?locales,localized}",
+      "templated": true
+    },
+    "fint:my-accessories-page-cd2": {
+      "href": "/customer-devices/{lang}/my-accessories",
+      "templated": true
+    },
+    "customer-devices:api-accessory-catalog": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/accessory/catalog{?deviceType,locales,localized}",
+      "templated": true
+    },
+    "customer-devices:api-accessory": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/accessory/catalog/{accessoryId}{?locales,localized}",
+      "templated": true
+    },
+    "customer-devices:feed-user-device-id-event": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/user-device-id/feed/event{?after}",
+      "templated": true
+    },
+    "customer-devices:api-usage-box-consent": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/internal/api/user-device-id/{deviceId}",
+      "templated": true
+    },
+    "fint:api-accessory-catalog": {
+      "href": "/customer-devices/api/accessory/catalog{?deviceType,locales,localized}",
+      "templated": true
+    },
+    "customer-devices:api-backoffice-cook-key-link": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/internal/api/backoffice/cook-key/links/{cookKeyId}",
+      "templated": true
+    },
+    "customer-devices:api-accessory-deactivate": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/accessory/{accessoryId}",
+      "templated": true
+    },
+    "fint:devices-overview-page": {
+      "href": "/customer-devices/{lang}/my-devices/include",
+      "templated": true
+    },
+    "customer-devices:feed-user-cook-key-id-event": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/cook-key/feed/event{?after}",
+      "templated": true
+    },
+    "fint:thermomix-versions": {
+      "href": "/customer-devices/api/my-devices/versions",
+      "templated": false
+    },
+    "customer-devices:api-activate": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/connected-device/links",
+      "templated": false
+    },
+    "customer-devices:api-accessories": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/accessory/catalog{?deviceType,locales,localized}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/.well-known/home",
+      "templated": false
+    },
+    "customer-devices:api-backoffice-cook-keys": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/internal/api/backoffice/customers/{dcid}/cook-keys",
+      "templated": true
+    },
+    "customer-devices:api-my-accessories-remove": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/api/accessory/{uid}",
+      "templated": true
+    },
+    "fint:api-my-accessories-ids": {
+      "href": "/customer-devices/api/accessory/ids",
+      "templated": false
+    }
+  },
+  "tmde2:profile": {
+    "profile:backoffice-api-change-country-of-residence": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/profile/backoffice/api/user/{dcid}/country-of-residence",
+      "templated": true
+    },
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api/?spec-url=/api/specs/profile_0.0.1.json#{rel}",
+      "templated": true
+    },
+    "fint:register-page": {
+      "href": "/ciam/register/start",
+      "templated": false
+    },
+    "profile:backoffice-api-change-user-status": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/profile/backoffice/api/user/{dcid}/status",
+      "templated": true
+    },
+    "fint:password": {
+      "href": "/profile/{lang}/profile",
+      "templated": true
+    },
+    "fint:onboarding-activation": {
+      "href": "/profile/{lang}/onboarding/activation",
+      "templated": true
+    },
+    "profile:login": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/profile/{lang}/login{?redirectAfterLogin}",
+      "templated": true
+    },
+    "profile:notification-settings-mobile": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/profile",
+      "templated": true
+    },
+    "profile:login-via-web": {
+      "href": "https://cookidoo.mx/profile/{lang}/login{?redirectAfterLogin}",
+      "templated": true
+    },
+    "profile:my-devices-page-mobile": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/customer-devices/{lang}/my-devices{?add}",
+      "templated": true
+    },
+    "fint:onboarding-confirmation": {
+      "href": "/profile/{lang}/onboarding/confirmation",
+      "templated": true
+    },
+    "profile:backoffice-api-change-email": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/profile/backoffice/api/user/{dcid}/email",
+      "templated": true
+    },
+    "specs": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/profile/.well-known/specs",
+      "templated": false
+    },
+    "profile:api-privacy-policy-text": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/documents/PRIVACY",
+      "templated": true
+    },
+    "fint:change-profile": {
+      "href": "/profile/{lang}/profile",
+      "templated": true
+    },
+    "fint:privacy-policy-modal": {
+      "href": "/consent/web/customers/{lang}/documents/PRIVACY",
+      "templated": true
+    },
+    "profile:account-overview-via-web": {
+      "href": "https://cookidoo.mx/commerce/{lang}/membership/rel-profile-account{?paymentUpdated}",
+      "templated": true
+    },
+    "fint:account-overview": {
+      "href": "/commerce/{lang}/membership{?paymentUpdated}",
+      "templated": true
+    },
+    "profile:usage-box-consent-menu": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/profile",
+      "templated": true
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/profile/.well-known/info",
+      "templated": false
+    },
+    "profile:password-reset": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/ciam/reset-password",
+      "templated": false
+    },
+    "fint:privacy-policy": {
+      "href": "/consent/web/customers/{lang}/documents/PRIVACY",
+      "templated": true
+    },
+    "profile:api-terms-of-use-text": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/documents/TOS",
+      "templated": true
+    },
+    "fint:api-user": {
+      "href": "/profile/api/user{?v}",
+      "templated": true
+    },
+    "fint:login-button": {
+      "href": "/profile/{lang}/includes/login-button{?authProxyLogoutUri,redirectAfterLogin}",
+      "templated": true
+    },
+    "profile:api-user": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/profile/api/user{?v}",
+      "templated": true
+    },
+    "fint:voucher": {
+      "href": "/commerce/{lang}/membership/rel-fint-voucher{?paymentUpdated}",
+      "templated": true
+    },
+    "fint:terms-of-use": {
+      "href": "/consent/web/customers/{lang}/documents/TOS",
+      "templated": true
+    },
+    "fint:purchased-content": {
+      "href": "/commerce/{lang}/membership/rel-fint-purchased{?paymentUpdated}",
+      "templated": true
+    },
+    "profile:legal-agreement-updates": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/consent-update-flow",
+      "templated": true
+    },
+    "profile:backoffice-api-trigger-user-deletion": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/profile/backoffice/api/user/{dcid}/deletion",
+      "templated": true
+    },
+    "fint:onboarding-consents": {
+      "href": "/consent/web/customers/{lang}/onboarding",
+      "templated": true
+    },
+    "profile:notification-settings-device": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/profile",
+      "templated": true
+    },
+    "fint:my-devices-page": {
+      "href": "/customer-devices/{lang}/my-devices",
+      "templated": true
+    },
+    "fint:terms-of-use-modal": {
+      "href": "/consent/web/customers/{lang}/documents/TOS",
+      "templated": true
+    },
+    "profile:onboarding-activation-via-web": {
+      "href": "https://cookidoo.mx/profile/{lang}/onboarding/activation",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/profile/.well-known/home",
+      "templated": false
+    },
+    "fint:select-device": {
+      "href": "/customer-devices/{lang}/my-devices",
+      "templated": true
+    },
+    "fint:add-device-version": {
+      "href": "/customer-devices/{lang}/my-devices",
+      "templated": true
+    },
+    "fint:subscription-page": {
+      "href": "/commerce/{lang}/membership/rel-fint-subscription{?paymentUpdated}",
+      "templated": true
+    },
+    "fint:legal-agreement-updates": {
+      "href": "/consent/web/customers/{lang}/consent-update-flow",
+      "templated": true
+    },
+    "fint:onboarding-welcome": {
+      "href": "/profile/{lang}/onboarding/welcome",
+      "templated": true
+    },
+    "profile:purchased-content": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/purchased-content/rel-profile-purchased",
+      "templated": true
+    },
+    "profile:api-device-consents": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/api/customers/device-consents/{lang}",
+      "templated": true
+    },
+    "profile:backoffice-api-get-user": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/profile/backoffice/api/user/{dcid}",
+      "templated": true
+    },
+    "fint:login": {
+      "href": "/profile/{lang}/login{?redirectAfterLogin}",
+      "templated": true
+    },
+    "fint:notification-settings": {
+      "href": "/consent/web/customers/{lang}/profile",
+      "templated": true
+    }
+  },
+  "tmde2:ownership": {
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/ownership/.well-known/home",
+      "templated": false
+    },
+    "ownership:subscriptions": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/ownership/subscriptions",
+      "templated": false
+    },
+    "ownership:subscriptionsV2": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/ownership/v2/subscriptions",
+      "templated": false
+    },
+    "ownership:recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/ownership/recipes",
+      "templated": false
+    },
+    "recipe-sync:device-offline-recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/ownership/device/{country}/offline-recipes",
+      "templated": true
+    },
+    "recipe-sync:device-account-recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/ownership/account-user/recipes",
+      "templated": false
+    }
+  },
+  "tmde2:commerce": {
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/.well-known/home",
+      "templated": false
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/.well-known/info",
+      "templated": false
+    },
+    "commerce:health-check": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/.well-known/health-check",
+      "templated": false
+    },
+    "commerce:upgrade-device-landing-page": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/customer/upgrade/landing-page{?trigger,notificationId}",
+      "templated": true
+    },
+    "apple:productIds": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/api/apple-productids",
+      "templated": false
+    },
+    "apple:productIdsV2": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/api/v2/apple-productids",
+      "templated": true
+    },
+    "apple:receipt-validation": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/api/apple-subscription",
+      "templated": false
+    },
+    "apple:transaction-validation": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/api/v2/apple-subscription",
+      "templated": false
+    },
+    "google:productIds": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/api/google-productids",
+      "templated": true
+    },
+    "google:purchase-validation": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/api/google-subscription",
+      "templated": false
+    },
+    "nc:notifications": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/api/notifications",
+      "templated": true
+    },
+    "nc:mobile-notifications": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/api/mobile-notifications",
+      "templated": true
+    },
+    "commerce:available-subscriptions-via-web": {
+      "href": "https://cookidoo.mx/commerce/{lang}/available-subscriptions",
+      "templated": true
+    },
+    "commerce:api-membership-details": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/api/membership-details",
+      "templated": true
+    },
+    "commerce:purchased-content": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/purchased-content",
+      "templated": true
+    },
+    "fint:api-churn-feedback-skip": {
+      "href": "/commerce/api/subscriptions/churn-feedback/skip",
+      "templated": false
+    },
+    "fint:api-churn-feedback": {
+      "href": "/commerce/api/subscriptions/churn-feedback{?type}",
+      "templated": true
+    },
+    "fint:available-subscriptions": {
+      "href": "/commerce/{lang}/available-subscriptions",
+      "templated": true
+    },
+    "fint:checkout-billing-address": {
+      "href": "/commerce/{lang}/checkout/billing-address{?reducedFlow,upgradeFlow,updateFlow}",
+      "templated": true
+    },
+    "fint:change-country-hint": {
+      "href": "/commerce/{lang}/includes/change-country-hint",
+      "templated": true
+    },
+    "fint:checkout-summary": {
+      "href": "/commerce/{lang}/checkout/summary{?paymentError,isNewPayPal,token,reducedFlow,upgradeFlow}",
+      "templated": true
+    },
+    "fint:upgrade-landing-page": {
+      "href": "/commerce/{lang}/customer/upgrade/landing-page{?trigger,notificationId}",
+      "templated": true
+    },
+    "fint:upgrade-new-subscription": {
+      "href": "/commerce/{lang}/customer/upgrade/new-subscription{?error,paymentError,trigger}",
+      "templated": true
+    },
+    "fint:distance-sales-agreement": {
+      "href": "/commerce/{lang}/modal/distance-sales-agreement",
+      "templated": true
+    },
+    "fint:churn-feedback": {
+      "href": "/commerce/{lang}/subscriptions/churn-feedback",
+      "templated": true
+    },
+    "fint:membership-info": {
+      "href": "/commerce/{lang}/membership{?success,toastType,voucherStatus,voucherCode,showPaymentBlockedOverlay}",
+      "templated": true
+    },
+    "fint:purchased-content": {
+      "href": "/commerce/{lang}/purchased-content",
+      "templated": true
+    },
+    "fint:unsubscribe": {
+      "href": "/commerce/{lang}/subscription-cancellation?selectedOffer={selectedOffer}&flagPaymentMethodForDeletion=false",
+      "templated": true
+    },
+    "fint:revoke-cancellation": {
+      "href": "/commerce/{lang}/revoke-cancellation",
+      "templated": true
+    },
+    "fint:checkout-payment-method": {
+      "href": "/commerce/{lang}/checkout/payment-method{?paymentError,reducedFlow,upgradeFlow}",
+      "templated": true
+    },
+    "fint:device-web-view-payment-pending": {
+      "href": "/commerce/{lang}/device-web-views/payment-pending",
+      "templated": true
+    },
+    "fint:device-web-view-trial-close-to-expiry": {
+      "href": "/commerce/{lang}/device-web-views/trial-close-to-expiry{?notificationId}",
+      "templated": true
+    },
+    "fint:device-web-view-trial-ended": {
+      "href": "/commerce/{lang}/device-web-views/trial-ended{?notificationId}",
+      "templated": true
+    },
+    "fint:device-web-view-device-trial-early-conversion": {
+      "href": "/commerce/{lang}/device-web-views/device-trial-early-conversion{?notificationId}",
+      "templated": true
+    },
+    "fint:device-web-view-device-trial-available": {
+      "href": "/commerce/{lang}/device-web-views/explicit-device-trial{?notificationId}",
+      "templated": true
+    },
+    "fint:manage-payment-info": {
+      "href": "/commerce/{lang}/managepaymentinfo{?paymentError}",
+      "templated": true
+    },
+    "fint:explicit-device-trial-marketing-page": {
+      "href": "/commerce/{lang}/explicit-device-trial/marketing-page",
+      "templated": true
+    },
+    "fint:trial-without-purchase": {
+      "href": "/commerce/{lang}/explicit-device-trial/trial-without-purchase",
+      "templated": true
+    },
+    "fint:account-mismatch": {
+      "href": "/commerce/{lang}/account-mismatch",
+      "templated": true
+    },
+    "fint:withdrawal": {
+      "href": "/commerce/{lang}/withdrawal",
+      "templated": true
+    },
+    "fint:mobile-trial-ending": {
+      "href": "/commerce/{lang}/mobile-app-web-views/trial-ending-soon",
+      "templated": true
+    },
+    "fint:mobile-trial-ended": {
+      "href": "/commerce/{lang}/mobile-app-web-views/trial-ended",
+      "templated": true
+    },
+    "fint:mobile-payment-pending": {
+      "href": "/commerce/{lang}/mobile-app-web-views/payment-pending",
+      "templated": true
+    },
+    "fint:conversion-teaser": {
+      "href": "/commerce/{lang}/teaser{?sticky,context}",
+      "templated": true
+    },
+    "commerce:membership-info-via-web": {
+      "href": "https://cookidoo.mx/commerce/{lang}/membership",
+      "templated": true
+    }
+  },
+  "tmde2:usagebox": {
+    "error": "CookidooRequestError('GET https://mx.tmmobile.vorwerk-digital.com/usagebox/.well-known/home -> 404')"
+  },
+  "tmde2:auth": {
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api",
+      "templated": false
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/ciam/.well-known/home/mobile",
+      "templated": false
+    },
+    "auth:code-grant": {
+      "href": "https://eu.login.vorwerk.com/oauth2/auth{?response_type,market,client_id,redirect_uri,state,scope}",
+      "templated": true
+    },
+    "auth:jwk": {
+      "href": "https://ciam.prod.cookidoo.vorwerk-digital.com/.well-known/jwks.json",
+      "templated": false
+    },
+    "auth:open-id-connect-discovery": {
+      "href": "https://ciam.prod.cookidoo.vorwerk-digital.com/.well-known/openid-configuration",
+      "templated": false
+    },
+    "auth:registration": {
+      "href": "https://eu.login.vorwerk.com/ciam/register{?lang,market}",
+      "templated": true
+    },
+    "auth:reset": {
+      "href": "https://login.vorwerk.com/vorwerkCore/web/account/password-reset-1.html{?redirect_uri,client_id,market,country}",
+      "templated": true
+    },
+    "auth:resource-owner-password-flow": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/ciam/auth/token",
+      "templated": false
+    },
+    "auth:token": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/ciam/auth/token",
+      "templated": false
+    },
+    "fint:logout": {
+      "href": "/ciam/logout{?rd}",
+      "templated": true
+    }
+  },
+  "tmde2:pantry": {
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/.well-known/home",
+      "templated": false
+    },
+    "pantry:healthcheck": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/.well-known/health-check",
+      "templated": false
+    },
+    "pantry:bucket": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/{lang}/partial/bucket{?limit,type}",
+      "templated": true
+    },
+    "fint:bucket": {
+      "href": "/shopping/{lang}/partial/bucket{?limit,type}",
+      "templated": true
+    },
+    "pantry:add-to-shopping-list": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/{lang}/partial/add-to-shopping-list/{recipeID}{?source}",
+      "templated": true
+    },
+    "fint:add-to-shopping-list": {
+      "href": "/shopping/{lang}/partial/add-to-shopping-list/{recipeID}{?source}",
+      "templated": true
+    },
+    "pantry:home": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/{lang}{?excludeComponent}",
+      "templated": true
+    },
+    "fint:home": {
+      "href": "/shopping/{lang}{?excludeComponent}",
+      "templated": true
+    },
+    "pantry:add-recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/{lang}/add-recipes",
+      "templated": true
+    },
+    "fint:add-recipes": {
+      "href": "/shopping/{lang}/add-recipes",
+      "templated": true
+    },
+    "pantry:recipe-ingredients": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/{lang}/recipes/add",
+      "templated": true
+    },
+    "fint:recipe-ingredients": {
+      "href": "/shopping/{lang}/recipes/add",
+      "templated": true
+    },
+    "pantry:remove-recipe": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/{lang}/recipes/remove",
+      "templated": true
+    },
+    "fint:remove-recipe": {
+      "href": "/shopping/{lang}/recipes/remove",
+      "templated": true
+    },
+    "pantry:add-additional-items": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/{lang}/additional-item",
+      "templated": true
+    },
+    "fint:add-additional-items": {
+      "href": "/shopping/{lang}/additional-item",
+      "templated": true
+    },
+    "pantry:add-additional-items-v2": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/{lang}/additional-items/add",
+      "templated": true
+    },
+    "fint:add-additional-items-v2": {
+      "href": "/shopping/{lang}/additional-items/add",
+      "templated": true
+    },
+    "pantry:remove-additional-items": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/{lang}/additional-items/remove",
+      "templated": true
+    },
+    "fint:remove-additional-items": {
+      "href": "/shopping/{lang}/additional-items/remove",
+      "templated": true
+    },
+    "pantry:edit-additional-items": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/{lang}/additional-items/edit",
+      "templated": true
+    },
+    "fint:edit-additional-items": {
+      "href": "/shopping/{lang}/additional-items/edit",
+      "templated": true
+    },
+    "pantry:edit-additional-items-ownership": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/{lang}/additional-items/ownership/edit",
+      "templated": true
+    },
+    "fint:edit-additional-items-ownership": {
+      "href": "/shopping/{lang}/additional-items/ownership/edit",
+      "templated": true
+    },
+    "pantry:edit-ingredients-ownership": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/shopping/{lang}/owned-ingredients/ownership/edit",
+      "templated": true
+    },
+    "fint:edit-ingredients-ownership": {
+      "href": "/shopping/{lang}/owned-ingredients/ownership/edit",
+      "templated": true
+    }
+  },
+  "tmde2:rating": {
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api/?spec-url=/rating/.well-known/documentation#{rel}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/rating/.well-known/home",
+      "templated": false
+    },
+    "rating:health-check": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/rating/.well-known/health-check",
+      "templated": false
+    },
+    "rating:user-rating-recipe": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/rating/{lang}/user-ratings/recipes/{recipeId}",
+      "templated": true
+    },
+    "fint:user-rating-recipe": {
+      "href": "/rating/{lang}/user-ratings/recipes/{recipeId}",
+      "templated": true
+    },
+    "rating:recipes-ratings": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/rating/{lang}/recipes-ratings",
+      "templated": true
+    },
+    "fint:recipes-ratings": {
+      "href": "/rating/{lang}/recipes-ratings",
+      "templated": true
+    },
+    "rating:aggregated-ratings-recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/rating/{lang}/aggregated-ratings/recipes",
+      "templated": false
+    },
+    "fint:aggregated-ratings-recipes": {
+      "href": "/rating/{lang}/aggregated-ratings/recipes",
+      "templated": false
+    },
+    "rating:aggregated-rating-recipe": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/rating/{lang}/aggregated-ratings/recipes/{recipeId}",
+      "templated": true
+    },
+    "fint:aggregated-rating-recipe": {
+      "href": "/rating/{lang}/aggregated-ratings/recipes/{recipeId}",
+      "templated": true
+    },
+    "rating:recipe-aggregated-rating-partial": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/rating/{lang}/partials/recipe-aggregated-rating/{recipeId}",
+      "templated": true
+    },
+    "fint:recipe-aggregated-rating-partial": {
+      "href": "/rating/{lang}/partials/recipe-aggregated-rating/{recipeId}",
+      "templated": true
+    },
+    "rating:recipe-aggregated-rating-clickable-partial": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/rating/{lang}/partials/recipe-aggregated-rating-clickable/{recipeId}",
+      "templated": true
+    },
+    "fint:recipe-aggregated-rating-clickable-partial": {
+      "href": "/rating/{lang}/partials/recipe-aggregated-rating-clickable/{recipeId}",
+      "templated": true
+    },
+    "rating:recipe-rating-menu-item-partial": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/rating/{lang}/partials/recipe-rating-menu-item/{recipeId}",
+      "templated": true
+    },
+    "fint:recipe-rating-menu-item-partial": {
+      "href": "/rating/{lang}/partials/recipe-rating-menu-item/{recipeId}",
+      "templated": true
+    },
+    "rating:recipe-user-rating-modal-partial": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/rating/{lang}/partials/recipe-user-rating-modal/{recipeId}",
+      "templated": true
+    },
+    "fint:recipe-user-rating-modal-partial": {
+      "href": "/rating/{lang}/partials/recipe-user-rating-modal/{recipeId}",
+      "templated": true
+    }
+  },
+  "tmde2:recommender": {
+    "recommender:stripe_position": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/stripe/{lang}/{stripePosition}",
+      "templated": true
+    },
+    "recommender:persrec": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/persrecs/{?stripeTopic,languageMarket}",
+      "templated": true
+    },
+    "recommender:mobile_foryou": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/mobile/{lang}/foryou",
+      "templated": true
+    },
+    "recommender:mobile_simrec": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/mobile/simrec/{recipeid}",
+      "templated": true
+    },
+    "recommender:web_foryou": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/web/{lang}/foryou",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/.well-known/home/",
+      "templated": false
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/.well-known/info/",
+      "templated": false
+    },
+    "recommender:alllistbytype": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/api/list-sync/{country}/{lang}/{type}",
+      "templated": true
+    },
+    "recommender:singlerecipelist": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/api/list-sync/{country}/{lang}/{type}/{id}",
+      "templated": true
+    },
+    "recommender:offlinerecipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/api/offline-recipes/{country}/{lang}",
+      "templated": true
+    },
+    "recommender:simrec_device": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/simrec/{recipeid}",
+      "templated": true
+    },
+    "recommender:persy": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recommender/persy/",
+      "templated": false
+    },
+    "fint:recommender:persy": {
+      "href": "/recommender/persy/",
+      "templated": false
+    }
+  },
+  "tmde2:community-profile": {
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api/?spec-url=/community/profile/.well-known/documentation/#{rel}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/community/profile/.well-known/home",
+      "templated": false
+    },
+    "community-profile:health-check": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/community/profile/.well-known/health-check",
+      "templated": false
+    },
+    "community-profile:api-2-get-search-prefences": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/community/profile/api/2/search-prefences",
+      "templated": false
+    },
+    "fint:api-2-get-search-prefences": {
+      "href": "/community/profile/api/2/search-prefences",
+      "templated": true
+    },
+    "community-profile:picture-signature": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/community/profile/{lang}/picture/signature",
+      "templated": true
+    },
+    "community-profile:user-private-profile": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/community/profile/{lang}",
+      "templated": true
+    },
+    "fint:user-private-profile": {
+      "href": "/community/profile/{lang}",
+      "templated": true
+    },
+    "community-profile:saved-searches": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/community/profile/{lang}/saved-searches",
+      "templated": true
+    },
+    "fint:saved-searches": {
+      "href": "/community/profile/{lang}/saved-searches",
+      "templated": true
+    },
+    "community-profile:user-basic-info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/community/profile/{lang}/me",
+      "templated": true
+    },
+    "fint:user-basic-info": {
+      "href": "/community/profile/{lang}/me",
+      "templated": true
+    },
+    "community-profile:user-preferences-partial": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/community/profile/{lang}/partials/user-preferences",
+      "templated": true
+    },
+    "fint:user-preferences-partial": {
+      "href": "/community/profile/{lang}/partials/user-preferences",
+      "templated": true
+    },
+    "community-profile:avatars-list": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/community/profile/{lang}/avatars",
+      "templated": true
+    },
+    "fint:avatars-list": {
+      "href": "/community/profile/{lang}/partials/avatars",
+      "templated": true
+    }
+  },
+  "tmde2:customer-recipes": {
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api/?spec-url=/created-recipes/.well-known/documentation#{rel}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/.well-known/home",
+      "templated": false
+    },
+    "healthcheck": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/.well-known/health-check",
+      "templated": false
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/.well-known/info",
+      "templated": false
+    },
+    "specs": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/.well-known/specs",
+      "templated": false
+    },
+    "customer-recipes:recipe-create": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}",
+      "templated": false
+    },
+    "customer-recipes:recipes-download": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/download",
+      "templated": false
+    },
+    "customer-recipes:recipes-download-section": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/partials/recipes-download-section",
+      "templated": false
+    },
+    "customer-recipes:recipes-list": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}{?ids,recipeUrl,partnerId,addToCookidoo}",
+      "templated": true
+    },
+    "customer-recipes:edit-page": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/{id}/edit",
+      "templated": true
+    },
+    "customer-recipes:edit-ingredients-and-preparation-steps-page": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/{id}/edit/ingredients-and-preparation-steps{?active}",
+      "templated": true
+    },
+    "customer-recipes:recipe-details": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/{id}",
+      "templated": true
+    },
+    "customer-recipes:recipe-details-public": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/public/recipes/{lang}/{id}",
+      "templated": true
+    },
+    "customer-recipes:image-signature": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/image/signature",
+      "templated": true
+    },
+    "customer-recipes:add-to-cookidoo": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/add-to-cookidoo{?recipeUrl,partnerId}",
+      "templated": true
+    },
+    "customer-recipes:add-to-cookidoo-import": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/add-to-cookidoo",
+      "templated": false
+    },
+    "customer-recipes:config": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/config",
+      "templated": false
+    },
+    "customer-recipes:add-to-customer-recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/partials/add-to-customer-recipes{?recipeUrl}",
+      "templated": true
+    },
+    "customer-recipes:edit-created-recipe": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/partials/edit-created-recipe{?recipeId}",
+      "templated": true
+    },
+    "customer-recipes:import-options": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/import/options{?cookidooRecipeId}",
+      "templated": true
+    },
+    "customer-recipes:scale-in-created-recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/partials/scale-in-created-recipes{?cookidooRecipeId,servingSize}",
+      "templated": true
+    },
+    "customer-recipes:scale-explanation-modal": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/partials/scale-explanation-modal{?cookidooRecipeId,servingSize}",
+      "templated": true
+    },
+    "customer-recipes:scale-recipe-page": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/import/preview{?cookidooRecipeId,variantId,servingSize}",
+      "templated": true
+    },
+    "customer-recipes:mobile-report-recipe": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/mobile/report-recipe{?recipeId}",
+      "templated": true
+    },
+    "customer-recipes:mobile-share-recipe": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/mobile/share-recipe{?recipeId}",
+      "templated": true
+    },
+    "customer-recipes:device-recipe-details": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/device/recipes/{recipe_id}",
+      "templated": true
+    },
+    "customer-recipes:device-offline-recipes": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/device/offline-recipes",
+      "templated": true
+    },
+    "customer-recipes:device-lists": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/device/lists/{type}",
+      "templated": true
+    },
+    "customer-recipes:device-list-details": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/device/lists/{type}/{id}",
+      "templated": true
+    },
+    "customer-recipes:translate-recipe-modal": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/partials/translate-recipe-modal{?cookidooRecipeUrl,cookidooRecipeLang}",
+      "templated": true
+    },
+    "customer-recipes:translate-recipe-option": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/created-recipes/{lang}/partials/translate-recipe-option{?cookidooRecipeUrl,cookidooRecipeLang}",
+      "templated": true
+    },
+    "fint:recipe-create": {
+      "href": "/created-recipes/{lang}",
+      "templated": false
+    },
+    "fint:recipes-download": {
+      "href": "/created-recipes/{lang}/download",
+      "templated": false
+    },
+    "fint:recipes-download-section": {
+      "href": "/created-recipes/{lang}/partials/recipes-download-section",
+      "templated": false
+    },
+    "fint:recipes-list": {
+      "href": "/created-recipes/{lang}{?ids,recipeUrl,partnerId,addToCookidoo}",
+      "templated": true
+    },
+    "fint:edit-page": {
+      "href": "/created-recipes/{lang}/{id}/edit",
+      "templated": true
+    },
+    "fint:edit-ingredients-and-preparation-steps-page": {
+      "href": "/created-recipes/{lang}/{id}/edit/ingredients-and-preparation-steps{?active}",
+      "templated": true
+    },
+    "fint:recipe-details": {
+      "href": "/created-recipes/{lang}/{id}",
+      "templated": true
+    },
+    "fint:recipe-details-public": {
+      "href": "/created-recipes/public/recipes/{lang}/{id}",
+      "templated": true
+    },
+    "fint:image-signature": {
+      "href": "/created-recipes/{lang}/image/signature",
+      "templated": true
+    },
+    "fint:add-to-cookidoo": {
+      "href": "/created-recipes/{lang}/add-to-cookidoo{?recipeUrl,partnerId}",
+      "templated": true
+    },
+    "fint:add-to-cookidoo-import": {
+      "href": "/created-recipes/{lang}/add-to-cookidoo",
+      "templated": false
+    },
+    "fint:config": {
+      "href": "/created-recipes/{lang}/config",
+      "templated": false
+    },
+    "fint:add-to-customer-recipes": {
+      "href": "/created-recipes/{lang}/partials/add-to-customer-recipes{?recipeUrl}",
+      "templated": true
+    },
+    "fint:edit-created-recipe": {
+      "href": "/created-recipes/{lang}/partials/edit-created-recipe{?recipeId}",
+      "templated": true
+    },
+    "fint:import-options": {
+      "href": "/created-recipes/{lang}/import/options{?cookidooRecipeId}",
+      "templated": true
+    },
+    "fint:scale-in-created-recipes": {
+      "href": "/created-recipes/{lang}/partials/scale-in-created-recipes{?cookidooRecipeId,servingSize}",
+      "templated": true
+    },
+    "fint:scale-explanation-modal": {
+      "href": "/created-recipes/{lang}/partials/scale-explanation-modal{?cookidooRecipeId,servingSize}",
+      "templated": true
+    },
+    "fint:scale-recipe-page": {
+      "href": "/created-recipes/{lang}/import/preview{?cookidooRecipeId,variantId,servingSize}",
+      "templated": true
+    },
+    "fint:mobile-report-recipe": {
+      "href": "/created-recipes/{lang}/mobile/report-recipe{?recipeId}",
+      "templated": true
+    },
+    "fint:mobile-share-recipe": {
+      "href": "/created-recipes/{lang}/mobile/share-recipe{?recipeId}",
+      "templated": true
+    },
+    "fint:device-recipe-details": {
+      "href": "/created-recipes/{lang}/device/recipes/{recipe_id}",
+      "templated": true
+    },
+    "fint:device-offline-recipes": {
+      "href": "/created-recipes/{lang}/device/offline-recipes",
+      "templated": true
+    },
+    "fint:device-lists": {
+      "href": "/created-recipes/{lang}/device/lists/{type}",
+      "templated": true
+    },
+    "fint:device-list-details": {
+      "href": "/created-recipes/{lang}/device/lists/{type}/{id}",
+      "templated": true
+    },
+    "fint:translate-recipe-modal": {
+      "href": "/created-recipes/{lang}/partials/translate-recipe-modal{?cookidooRecipeUrl,cookidooRecipeLang}",
+      "templated": true
+    },
+    "fint:translate-recipe-option": {
+      "href": "/created-recipes/{lang}/partials/translate-recipe-option{?cookidooRecipeUrl,cookidooRecipeLang}",
+      "templated": true
+    }
+  },
+  "tmde2:mobile-purchases": {
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/.well-known/home",
+      "templated": false
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/.well-known/info",
+      "templated": false
+    },
+    "commerce:health-check": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/.well-known/health-check",
+      "templated": false
+    },
+    "commerce:upgrade-device-landing-page": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/customer/upgrade/landing-page{?trigger,notificationId}",
+      "templated": true
+    },
+    "apple:productIds": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/api/apple-productids",
+      "templated": false
+    },
+    "apple:productIdsV2": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/api/v2/apple-productids",
+      "templated": true
+    },
+    "apple:receipt-validation": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/api/apple-subscription",
+      "templated": false
+    },
+    "apple:transaction-validation": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/api/v2/apple-subscription",
+      "templated": false
+    },
+    "google:productIds": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/api/google-productids",
+      "templated": true
+    },
+    "google:purchase-validation": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/api/google-subscription",
+      "templated": false
+    },
+    "nc:notifications": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/api/notifications",
+      "templated": true
+    },
+    "nc:mobile-notifications": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/api/mobile-notifications",
+      "templated": true
+    },
+    "commerce:available-subscriptions-via-web": {
+      "href": "https://cookidoo.mx/commerce/{lang}/available-subscriptions",
+      "templated": true
+    },
+    "commerce:api-membership-details": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/api/membership-details",
+      "templated": true
+    },
+    "commerce:purchased-content": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/commerce/{lang}/purchased-content",
+      "templated": true
+    },
+    "fint:api-churn-feedback-skip": {
+      "href": "/commerce/api/subscriptions/churn-feedback/skip",
+      "templated": false
+    },
+    "fint:api-churn-feedback": {
+      "href": "/commerce/api/subscriptions/churn-feedback{?type}",
+      "templated": true
+    },
+    "fint:available-subscriptions": {
+      "href": "/commerce/{lang}/available-subscriptions",
+      "templated": true
+    },
+    "fint:checkout-billing-address": {
+      "href": "/commerce/{lang}/checkout/billing-address{?reducedFlow,upgradeFlow,updateFlow}",
+      "templated": true
+    },
+    "fint:change-country-hint": {
+      "href": "/commerce/{lang}/includes/change-country-hint",
+      "templated": true
+    },
+    "fint:checkout-summary": {
+      "href": "/commerce/{lang}/checkout/summary{?paymentError,isNewPayPal,token,reducedFlow,upgradeFlow}",
+      "templated": true
+    },
+    "fint:upgrade-landing-page": {
+      "href": "/commerce/{lang}/customer/upgrade/landing-page{?trigger,notificationId}",
+      "templated": true
+    },
+    "fint:upgrade-new-subscription": {
+      "href": "/commerce/{lang}/customer/upgrade/new-subscription{?error,paymentError,trigger}",
+      "templated": true
+    },
+    "fint:distance-sales-agreement": {
+      "href": "/commerce/{lang}/modal/distance-sales-agreement",
+      "templated": true
+    },
+    "fint:churn-feedback": {
+      "href": "/commerce/{lang}/subscriptions/churn-feedback",
+      "templated": true
+    },
+    "fint:membership-info": {
+      "href": "/commerce/{lang}/membership{?success,toastType,voucherStatus,voucherCode,showPaymentBlockedOverlay}",
+      "templated": true
+    },
+    "fint:purchased-content": {
+      "href": "/commerce/{lang}/purchased-content",
+      "templated": true
+    },
+    "fint:unsubscribe": {
+      "href": "/commerce/{lang}/subscription-cancellation?selectedOffer={selectedOffer}&flagPaymentMethodForDeletion=false",
+      "templated": true
+    },
+    "fint:revoke-cancellation": {
+      "href": "/commerce/{lang}/revoke-cancellation",
+      "templated": true
+    },
+    "fint:checkout-payment-method": {
+      "href": "/commerce/{lang}/checkout/payment-method{?paymentError,reducedFlow,upgradeFlow}",
+      "templated": true
+    },
+    "fint:device-web-view-payment-pending": {
+      "href": "/commerce/{lang}/device-web-views/payment-pending",
+      "templated": true
+    },
+    "fint:device-web-view-trial-close-to-expiry": {
+      "href": "/commerce/{lang}/device-web-views/trial-close-to-expiry{?notificationId}",
+      "templated": true
+    },
+    "fint:device-web-view-trial-ended": {
+      "href": "/commerce/{lang}/device-web-views/trial-ended{?notificationId}",
+      "templated": true
+    },
+    "fint:device-web-view-device-trial-early-conversion": {
+      "href": "/commerce/{lang}/device-web-views/device-trial-early-conversion{?notificationId}",
+      "templated": true
+    },
+    "fint:device-web-view-device-trial-available": {
+      "href": "/commerce/{lang}/device-web-views/explicit-device-trial{?notificationId}",
+      "templated": true
+    },
+    "fint:manage-payment-info": {
+      "href": "/commerce/{lang}/managepaymentinfo{?paymentError}",
+      "templated": true
+    },
+    "fint:explicit-device-trial-marketing-page": {
+      "href": "/commerce/{lang}/explicit-device-trial/marketing-page",
+      "templated": true
+    },
+    "fint:trial-without-purchase": {
+      "href": "/commerce/{lang}/explicit-device-trial/trial-without-purchase",
+      "templated": true
+    },
+    "fint:account-mismatch": {
+      "href": "/commerce/{lang}/account-mismatch",
+      "templated": true
+    },
+    "fint:withdrawal": {
+      "href": "/commerce/{lang}/withdrawal",
+      "templated": true
+    },
+    "fint:mobile-trial-ending": {
+      "href": "/commerce/{lang}/mobile-app-web-views/trial-ending-soon",
+      "templated": true
+    },
+    "fint:mobile-trial-ended": {
+      "href": "/commerce/{lang}/mobile-app-web-views/trial-ended",
+      "templated": true
+    },
+    "fint:mobile-payment-pending": {
+      "href": "/commerce/{lang}/mobile-app-web-views/payment-pending",
+      "templated": true
+    },
+    "fint:conversion-teaser": {
+      "href": "/commerce/{lang}/teaser{?sticky,context}",
+      "templated": true
+    },
+    "commerce:membership-info-via-web": {
+      "href": "https://cookidoo.mx/commerce/{lang}/membership",
+      "templated": true
+    }
+  },
+  "tmde2:mobile-notification": {
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/notification-center/.well-known/home",
+      "templated": false
+    },
+    "notifications:collection": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/notification-center/{lang}/notifications/",
+      "templated": true
+    },
+    "nc:notifications": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/notification-center/{lang}/notifications-with-capabilities/?capabilities=NotificationApiV1",
+      "templated": true
+    },
+    "nc:notifications-with-capabilities": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/notification-center/{lang}/notifications-with-capabilities/?capabilities={capabilities}",
+      "templated": true
+    },
+    "mobile:notifications": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/notification-center/{lang}/mobile-notifications/",
+      "templated": true
+    },
+    "nc:realm-priorities": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/notification-center/realm-priorities/",
+      "templated": false
+    },
+    "fint:mute": {
+      "href": "/notification-center/mute/{id}/{daysToPause}",
+      "templated": true
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/notification-center/.well-known/info",
+      "templated": false
+    }
+  },
+  "tmde2:reactivation": {
+    "error": "CookidooRequestError('GET https://mx.tmmobile.vorwerk-digital.com/reactivation/.well-known/home -> 404')"
+  },
+  "tmde2:recipe-notes": {
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/api/?spec-url=/recipe-notes/.well-known/documentation#{rel}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipe-notes/.well-known/home",
+      "templated": false
+    },
+    "healthcheck": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipe-notes/.well-known/health-check",
+      "templated": false
+    },
+    "info": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipe-notes/.well-known/info",
+      "templated": false
+    },
+    "specs": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipe-notes/.well-known/specs",
+      "templated": false
+    },
+    "recipe-notes:recipe-note": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipe-notes/{lang}/recipes/{recipeId}",
+      "templated": true
+    },
+    "recipe-notes:recipe-note-create": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipe-notes/{lang}/recipes",
+      "templated": true
+    },
+    "recipe-notes:recipe-note-partial": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/recipe-notes/{lang}/partials/recipes/{recipeId}",
+      "templated": true
+    },
+    "fint:recipe-note": {
+      "href": "/recipe-notes/{lang}/recipes/{recipeId}",
+      "templated": true
+    },
+    "fint:recipe-note-create": {
+      "href": "/recipe-notes/{lang}/recipes",
+      "templated": true
+    },
+    "fint:recipe-note-partial": {
+      "href": "/recipe-notes/{lang}/partials/recipes/{recipeId}",
+      "templated": true
+    }
+  },
+  "tmde2:consent": {
+    "consent:apiConsentsForDcid": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/api/consents/active/{subject}",
+      "templated": true
+    },
+    "consent:apiCustomersPersonalizationInfo": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/api/customers/consents/personalization/info",
+      "templated": false
+    },
+    "consent:apiDeviceConsents": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/api/customers/device-consents/{lang}",
+      "templated": true
+    },
+    "consent:apiNotificationAcceptConsent": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/api/notifications/{consentNotificationId}/accept",
+      "templated": true
+    },
+    "consent:apiNotificationMute": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/api/notifications/{consentNotificationId}/mute",
+      "templated": true
+    },
+    "consent:apiSyncCustomersConsents": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/api/customers/consents/sync",
+      "templated": false
+    },
+    "consent:consentForm": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/region/{region}",
+      "templated": true
+    },
+    "consent:consentUpdateFlow": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/consent-update-flow",
+      "templated": true
+    },
+    "consent:document-privacy-policy": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/documents/{lang}/latest/privacy{?region}",
+      "templated": true
+    },
+    "consent:document-privacy-policy-via-commerce": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/documents/{lang}/latest/privacy-via-commerce{?region}",
+      "templated": true
+    },
+    "consent:document-terms-of-use": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/documents/{lang}/latest/tos{?region}",
+      "templated": true
+    },
+    "consent:document-terms-of-use-via-commerce": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/documents/{lang}/latest/tos-via-commerce{?region}",
+      "templated": true
+    },
+    "consent:documentById": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/documents/{lang}/{id}",
+      "templated": true
+    },
+    "consent:home": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/.well-known/home",
+      "templated": false
+    },
+    "consent:latestDocumentForRegion": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/api/documents/{region}/relevant{?timestamp}",
+      "templated": true
+    },
+    "consent:mandatoryDocumentsByRegion": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/documents/{lang}/mandatory/{region}{?timestamp}",
+      "templated": true
+    },
+    "consent:newCustomer": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/api/customers",
+      "templated": false
+    },
+    "consent:onboarding-consents": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/onboarding",
+      "templated": true
+    },
+    "consent:postConsentForm": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/update",
+      "templated": true
+    },
+    "consent:postConsentUpdateFlow": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/consent-update-flow",
+      "templated": true
+    },
+    "consent:postConsentUpdateFlowTos": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/consent-update-flow/tos",
+      "templated": true
+    },
+    "consent:profile": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/profile",
+      "templated": true
+    },
+    "consent:profileDocumentPage": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/documents/{purpose}",
+      "templated": true
+    },
+    "consent:relevantDocumentByRegionAndPurpose": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/documents/{lang}/relevant/{purpose}{?region}",
+      "templated": true
+    },
+    "consent:relevantDocumentByRegionAndPurposeApi": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/documents/relevant/{purpose}{?region}",
+      "templated": true
+    },
+    "consent:revokeByToken": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/revocation/revoke/{lang}",
+      "templated": true
+    },
+    "consent:writeConsentForCustomer": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/web/customers/{lang}/updates",
+      "templated": true
+    },
+    "fint:allDocuments": {
+      "href": "/consent/web/documents/{?type,mandatory,region,purpose,current}",
+      "templated": true
+    },
+    "fint:consentForm": {
+      "href": "/consent/web/customers/{lang}/region/{region}",
+      "templated": true
+    },
+    "fint:consentUpdateFlow": {
+      "href": "/consent/web/customers/{lang}/consent-update-flow",
+      "templated": true
+    },
+    "fint:document-privacy-policy": {
+      "href": "/consent/web/documents/{lang}/latest/privacy{?region}",
+      "templated": true
+    },
+    "fint:document-privacy-policy-via-commerce": {
+      "href": "/consent/web/documents/{lang}/latest/privacy-via-commerce{?region}",
+      "templated": true
+    },
+    "fint:document-terms-of-use": {
+      "href": "/consent/web/documents/{lang}/latest/tos{?region}",
+      "templated": true
+    },
+    "fint:document-terms-of-use-via-commerce": {
+      "href": "/consent/web/documents/{lang}/latest/tos-via-commerce{?region}",
+      "templated": true
+    },
+    "fint:documentById": {
+      "href": "/consent/web/documents/{lang}/{id}",
+      "templated": true
+    },
+    "fint:onboarding-consents": {
+      "href": "/consent/web/customers/{lang}/onboarding",
+      "templated": true
+    },
+    "fint:profile": {
+      "href": "/consent/web/customers/{lang}/profile",
+      "templated": true
+    },
+    "fint:profileDocumentPage": {
+      "href": "/consent/web/customers/{lang}/documents/{purpose}",
+      "templated": true
+    },
+    "fint:relevantDocumentByRegionAndPurpose": {
+      "href": "/consent/web/documents/{lang}/relevant/{purpose}{?region}",
+      "templated": true
+    },
+    "fint:relevantDocumentByRegionAndPurposeApi": {
+      "href": "/consent/web/documents/relevant/{purpose}{?region}",
+      "templated": true
+    },
+    "fint:revokeByToken": {
+      "href": "/consent/web/revocation/revoke/{lang}",
+      "templated": true
+    },
+    "fint:writeConsentForCustomer": {
+      "href": "/consent/web/customers/{lang}/updates",
+      "templated": true
+    },
+    "nc:mobile-notifications": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/api/notifications/mobile{?lang}",
+      "templated": true
+    },
+    "nc:notifications": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/api/notifications/device{?lang,capabilities}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/consent/.well-known/home",
+      "templated": false
+    }
+  },
+  "tmde2:copilot": {
+    "self": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/.well-known/home",
+      "templated": false
+    },
+    "curies": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/.well-known/{rel}",
+      "templated": true
+    },
+    "assistant:backend": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/api",
+      "templated": false
+    },
+    "assistant:frontend:healthcheck": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/.well-known/frontend-health-check",
+      "templated": false
+    },
+    "assistant:chat": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/{lang}/mobile/",
+      "templated": true
+    },
+    "assistant:chat-continue": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/{lang}/mobile?continue=latest",
+      "templated": true
+    },
+    "assistant:api-delete-history": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/{lang}/mobile?delete-history",
+      "templated": true
+    },
+    "assistant:tips-and-tricks": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/{lang}/mobile/tutorial",
+      "templated": true
+    },
+    "assistant:problem-report": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/{lang}/mobile/problem-report",
+      "templated": true
+    },
+    "assistant:mode:recipe-import": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/{lang}/mobile?mode=tmx&url={importUrl}",
+      "templated": true
+    },
+    "assistant:settings:memory": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/{lang}/mobile/memory/settings",
+      "templated": true
+    },
+    "assistant:settings:api-delete-memories": {
+      "href": "https://mx.tmmobile.vorwerk-digital.com/copilot/{lang}/mobile/memory/settings?delete-memories",
+      "templated": true
+    }
+  },
+  "tmde2:mobile-config": {
+    "self": {
+      "href": "https://mobile-config.prod.cookidoo.vorwerk-digital.com/.well-known/home",
+      "templated": false
+    },
+    "mobile-config:config": {
+      "href": "https://mobile-config.prod.cookidoo.vorwerk-digital.com/config",
+      "templated": false
+    },
+    "mobile-config:prereleaseconfig": {
+      "href": "https://mobile-config.prod.cookidoo.vorwerk-digital.com/prereleaseconfig",
+      "templated": false
+    },
+    "mobile-config:cc-config": {
+      "href": "https://mobile-config.prod.cookidoo.vorwerk-digital.com/cc-config",
+      "templated": false
+    }
+  },
+  "tmde2:rmi-config": {
+    "self": {
+      "href": "https://us.tmmobile.vorwerk-digital.com/rmi-config/.well-known/home",
+      "templated": false
+    },
+    "rmi:register-token": {
+      "href": "https://iot-api.production-us.cookidoo.vorwerk-digital.com/device-token",
+      "templated": false
+    },
+    "rmi:register-start-token": {
+      "href": "https://iot-api.production-us.cookidoo.vorwerk-digital.com/start-token",
+      "templated": false
+    },
+    "rmi:register-update-token": {
+      "href": "https://iot-api.production-us.cookidoo.vorwerk-digital.com/update-token/{cookingActivityId}",
+      "templated": true
+    },
+    "rmi:unregister": {
+      "href": "https://iot-api.production-us.cookidoo.vorwerk-digital.com/token",
+      "templated": false
+    },
+    "rmi:unregister-all": {
+      "href": "https://iot-api.production-us.cookidoo.vorwerk-digital.com/token-all",
+      "templated": false
+    },
+    "rmi:devices": {
+      "href": "https://iot-api.production-us.cookidoo.vorwerk-digital.com/devices{?nonce}",
+      "templated": true
+    },
+    "rmi:actions": {
+      "href": "https://iot-api.production-us.cookidoo.vorwerk-digital.com/actions/{deviceId}/{topic}{?qos,nonce}",
+      "templated": true
+    }
+  }
+}

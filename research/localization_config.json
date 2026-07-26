@@ -1,0 +1,862 @@
+{
+   "markets" : [
+      {
+         "name" : "Austria",
+         "marketCode" : "at",
+         "phraseappMarketKey" : "austria",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "Austria",
+               "code" : "AT"
+            }
+         ],
+         "mainCountry" : "AT",
+         "mainDomain" : "cookidoo.at",
+         "geoRegion" : "EU",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "EUR",
+         "editorialContentLanguageTags" : [
+            "de-AT, de, en"
+         ],
+         "defaultUILanguage" : "de-AT",
+         "currencies" : [
+            "EUR"
+         ],
+         "allowedUILanguages" : [
+            "de-AT"
+         ],
+         "countryCodes" : [
+            "AT"
+         ],
+         "market" : "cookidoo.at"
+      },
+      {
+         "name" : "Australia and New Zealand",
+         "marketCode" : "au",
+         "phraseappMarketKey" : "australiaandnz",
+         "operator" : "VI (Export)",
+         "countries" : [
+            {
+               "name" : "Australia",
+               "code" : "AU"
+            },
+            {
+               "name" : "New Zealand",
+               "code" : "NZ"
+            }
+         ],
+         "mainCountry" : "AU",
+         "mainDomain" : "cookidoo.com.au",
+         "geoRegion" : "OC",
+         "awsRegion" : "AU",
+         "userBucket" : "Switzerland",
+         "currencies" : [
+            "AUD",
+            "NZD"
+         ],
+         "mainCurrency" : "AUD",
+         "editorialContentLanguageTags" : [
+            "en-AU, en"
+         ],
+         "allowedUILanguages" : [
+            "en-AU"
+         ],
+         "defaultUILanguage" : "en-AU",
+         "countryCodes" : [
+            "AU",
+            "NZ"
+         ],
+         "market" : "cookidoo.com.au"
+      },
+      {
+         "name" : "Benelux",
+         "marketCode" : "be",
+         "phraseappMarketKey" : "benelux",
+         "operator" : "VI (Export)",
+         "countries" : [
+            {
+               "name" : "Belgium",
+               "code" : "BE"
+            },
+            {
+               "name" : "Netherlands",
+               "code" : "NL"
+            },
+            {
+               "name" : "Luxembourg",
+               "code" : "LU"
+            }
+         ],
+         "mainCountry" : "BE",
+         "mainDomain" : "cookidoo.be",
+         "geoRegion" : "EU",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "EUR",
+         "editorialContentLanguageTags" : [
+            "nl-BE, nl, en",
+            "fr-BE, fr, en",
+            "de-BE, de, en"
+         ],
+         "allowedUILanguages" : [
+            "nl-BE",
+            "fr-BE",
+            "de-BE",
+            "en"
+         ],
+         "defaultUILanguage" : "nl-BE",
+         "currencies" : [
+            "EUR"
+         ],
+         "countryCodes" : [
+            "BE",
+            "NL",
+            "LU"
+         ],
+         "market" : "cookidoo.be"
+      },
+      {
+         "name" : "Switzerland",
+         "marketCode" : "ch",
+         "phraseappMarketKey" : "switzerland",
+         "operator" : "VI (Export)",
+         "countries" : [
+            {
+               "name" : "Switzerland",
+               "code" : "CH"
+            }
+         ],
+         "mainCountry" : "CH",
+         "mainDomain" : "cookidoo.ch",
+         "geoRegion" : "EU",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "CHF",
+         "editorialContentLanguageTags" : [
+            "de-CH, de, en",
+            "fr-CH, fr, en",
+            "it-CH, it, en"
+         ],
+         "allowedUILanguages" : [
+            "de-CH",
+            "fr-CH",
+            "it-CH",
+            "en"
+         ],
+         "defaultUILanguage" : "de-CH",
+         "currencies" : [
+            "CHF"
+         ],
+         "countryCodes" : [
+            "CH"
+         ],
+         "market" : "cookidoo.ch"
+      },
+      {
+         "name" : "Czech Republic",
+         "marketCode" : "cz",
+         "phraseappMarketKey" : "czechrepublic",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "Czech Republic",
+               "code" : "CZ"
+            }
+         ],
+         "mainCountry" : "CZ",
+         "mainDomain" : "cookidoo.cz",
+         "geoRegion" : "EU",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "CZK",
+         "editorialContentLanguageTags" : [
+            "cs, en"
+         ],
+         "defaultUILanguage" : "cs",
+         "currencies" : [
+            "CZK"
+         ],
+         "allowedUILanguages" : [
+            "cs"
+         ],
+         "countryCodes" : [
+            "CZ"
+         ],
+         "market" : "cookidoo.cz"
+      },
+      {
+         "name" : "Germany",
+         "marketCode" : "de",
+         "phraseappMarketKey" : "germany",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "Germany",
+               "code" : "DE"
+            }
+         ],
+         "mainCountry" : "DE",
+         "mainDomain" : "cookidoo.de",
+         "geoRegion" : "EU",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "EUR",
+         "editorialContentLanguageTags" : [
+            "de, en"
+         ],
+         "allowedUILanguages" : [
+            "de-DE"
+         ],
+         "defaultUILanguage" : "de-DE",
+         "currencies" : [
+            "EUR"
+         ],
+         "countryCodes" : [
+            "DE"
+         ],
+         "market" : "cookidoo.de"
+      },
+      {
+         "name" : "Spain",
+         "marketCode" : "es",
+         "phraseappMarketKey" : "spain",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "Spain",
+               "code" : "ES"
+            }
+         ],
+         "mainCountry" : "ES",
+         "mainDomain" : "cookidoo.es",
+         "geoRegion" : "EU",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "EUR",
+         "editorialContentLanguageTags" : [
+            "es, en"
+         ],
+         "allowedUILanguages" : [
+            "es-ES"
+         ],
+         "defaultUILanguage" : "es-ES",
+         "currencies" : [
+            "EUR"
+         ],
+         "countryCodes" : [
+            "ES"
+         ],
+         "market" : "cookidoo.es"
+      },
+      {
+         "name" : "France",
+         "marketCode" : "fr",
+         "phraseappMarketKey" : "france",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "France",
+               "code" : "FR"
+            }
+         ],
+         "mainCountry" : "FR",
+         "mainDomain" : "cookidoo.fr",
+         "geoRegion" : "EU",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "EUR",
+         "editorialContentLanguageTags" : [
+            "fr, en"
+         ],
+         "allowedUILanguages" : [
+            "fr-FR"
+         ],
+         "defaultUILanguage" : "fr-FR",
+         "currencies" : [
+            "EUR"
+         ],
+         "countryCodes" : [
+            "FR"
+         ],
+         "market" : "cookidoo.fr"
+      },
+      {
+         "name" : "Italy",
+         "marketCode" : "it",
+         "phraseappMarketKey" : "italy",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "Italy",
+               "code" : "IT"
+            }
+         ],
+         "mainCountry" : "IT",
+         "mainDomain" : "cookidoo.it",
+         "geoRegion" : "EU",
+         "hasBimbyLogo" : true,
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "EUR",
+         "editorialContentLanguageTags" : [
+            "it, en"
+         ],
+         "allowedUILanguages" : [
+            "it-IT"
+         ],
+         "defaultUILanguage" : "it-IT",
+         "currencies" : [
+            "EUR"
+         ],
+         "countryCodes" : [
+            "IT"
+         ],
+         "market" : "cookidoo.it"
+      },
+      {
+         "name" : "Mexico",
+         "marketCode" : "mx",
+         "phraseappMarketKey" : "mexico",
+         "operator" : "VI (Export)",
+         "countries" : [
+            {
+               "name" : "Mexico",
+               "code" : "MX"
+            }
+         ],
+         "mainCountry" : "MX",
+         "mainDomain" : "cookidoo.mx",
+         "geoRegion" : "NA",
+         "awsRegion" : "US",
+         "userBucket" : "Americas",
+         "mainCurrency" : "MXN",
+         "editorialContentLanguageTags" : [
+            "es-MX, es, en"
+         ],
+         "defaultUILanguage" : "es-MX",
+         "currencies" : [
+            "MXN"
+         ],
+         "allowedUILanguages" : [
+            "es-MX"
+         ],
+         "countryCodes" : [
+            "MX"
+         ],
+         "market" : "cookidoo.mx"
+      },
+      {
+         "name" : "Poland",
+         "marketCode" : "pl",
+         "phraseappMarketKey" : "poland",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "Poland",
+               "code" : "PL"
+            }
+         ],
+         "mainCountry" : "PL",
+         "mainDomain" : "cookidoo.pl",
+         "geoRegion" : "EU",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "PLN",
+         "editorialContentLanguageTags" : [
+            "pl, en"
+         ],
+         "allowedUILanguages" : [
+            "pl-PL"
+         ],
+         "defaultUILanguage" : "pl",
+         "currencies" : [
+            "PLN"
+         ],
+         "countryCodes" : [
+            "PL"
+         ],
+         "market" : "cookidoo.pl"
+      },
+      {
+         "name" : "Portugal",
+         "marketCode" : "pt",
+         "phraseappMarketKey" : "portugal",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "Portugal",
+               "code" : "PT"
+            }
+         ],
+         "mainCountry" : "PT",
+         "mainDomain" : "cookidoo.pt",
+         "geoRegion" : "EU",
+         "hasBimbyLogo" : true,
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "EUR",
+         "editorialContentLanguageTags" : [
+            "pt, en"
+         ],
+         "allowedUILanguages" : [
+            "pt-PT"
+         ],
+         "defaultUILanguage" : "pt-PT",
+         "currencies" : [
+            "EUR"
+         ],
+         "countryCodes" : [
+            "PT"
+         ],
+         "market" : "cookidoo.pt"
+      },
+      {
+         "name" : "Taiwan",
+         "marketCode" : "tw",
+         "phraseappMarketKey" : "taiwan",
+         "operator" : "VI (Export)",
+         "countries" : [
+            {
+               "name" : "Taiwan",
+               "code" : "TW"
+            }
+         ],
+         "mainCountry" : "TW",
+         "mainDomain" : "cookidoo.tw",
+         "geoRegion" : "AS",
+         "awsRegion" : "AU",
+         "userBucket" : "AsiaPacific",
+         "mainCurrency" : "TWD",
+         "editorialContentLanguageTags" : [
+            "zh-TW, en"
+         ],
+         "allowedUILanguages" : [
+            "zh-Hant"
+         ],
+         "defaultUILanguage" : "zh-Hant",
+         "currencies" : [
+            "TWD"
+         ],
+         "countryCodes" : [
+            "TW"
+         ],
+         "market" : "cookidoo.tw"
+      },
+      {
+         "name" : "Great Britain and Ireland",
+         "marketCode" : "gb",
+         "phraseappMarketKey" : "gbandireland",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "Great Britain",
+               "code" : "GB"
+            },
+            {
+               "name" : "Ireland",
+               "code" : "IE"
+            }
+         ],
+         "mainCountry" : "GB",
+         "mainDomain" : "cookidoo.co.uk",
+         "geoRegion" : "EU",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "currencies" : [
+            "GBP",
+            "EUR"
+         ],
+         "mainCurrency" : "GBP",
+         "editorialContentLanguageTags" : [
+            "en-GB, en"
+         ],
+         "allowedUILanguages" : [
+            "en-GB"
+         ],
+         "defaultUILanguage" : "en-GB",
+         "countryCodes" : [
+            "GB",
+            "IE"
+         ],
+         "market" : "cookidoo.co.uk"
+      },
+      {
+         "name" : "United States",
+         "marketCode" : "us",
+         "phraseappMarketKey" : "unitedstates",
+         "operator" : "Vorwerk LLC",
+         "countries" : [
+            {
+               "name" : "United States",
+               "code" : "US"
+            }
+         ],
+         "mainCountry" : "US",
+         "mainDomain" : "cookidoo.thermomix.com",
+         "alternateDomains" : [
+            "cookidoo.us"
+         ],
+         "geoRegion" : "NA",
+         "awsRegion" : "US",
+         "userBucket" : "Americas",
+         "mainCurrency" : "USD",
+         "editorialContentLanguageTags" : [
+            "en-US, en"
+         ],
+         "defaultUILanguage" : "en-US",
+         "currencies" : [
+            "USD"
+         ],
+         "allowedUILanguages" : [
+            "en-US"
+         ],
+         "countryCodes" : [
+            "US"
+         ],
+         "market" : "cookidoo.thermomix.com"
+      },
+      {
+         "name" : "Canada",
+         "marketCode" : "ca",
+         "phraseappMarketKey" : "canada",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "Canada",
+               "code" : "CA"
+            }
+         ],
+         "mainCountry" : "CA",
+         "mainDomain" : "cookidoo.ca",
+         "geoRegion" : "NA",
+         "awsRegion" : "US",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "CAD",
+         "editorialContentLanguageTags" : [
+            "en",
+            "fr"
+         ],
+         "allowedUILanguages" : [
+            "en-CA",
+            "fr-CA"
+         ],
+         "defaultUILanguage" : "en-CA",
+         "currencies" : [
+            "CAD"
+         ],
+         "countryCodes" : [
+            "CA"
+         ],
+         "market" : "cookidoo.ca"
+      },
+      {
+         "name" : "Turkey",
+         "marketCode" : "tr",
+         "phraseappMarketKey" : "turkey",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "Turkey",
+               "code" : "TR"
+            }
+         ],
+         "mainCountry" : "TR",
+         "mainDomain" : "cookidoo.com.tr",
+         "geoRegion" : "EU",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "EUR",
+         "editorialContentLanguageTags" : [
+            "tr, en"
+         ],
+         "allowedUILanguages" : [
+            "tr-TR"
+         ],
+         "defaultUILanguage" : "tr-TR",
+         "currencies" : [
+            "EUR"
+         ],
+         "countryCodes" : [
+            "TR"
+         ],
+         "market" : "cookidoo.com.tr"
+      },
+      {
+         "name" : "Greece",
+         "marketCode" : "gr",
+         "phraseappMarketKey" : "greece",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "Greece",
+               "code" : "GR"
+            }
+         ],
+         "mainCountry" : "GR",
+         "mainDomain" : "cookidoo.gr",
+         "geoRegion" : "EU",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "EUR",
+         "editorialContentLanguageTags" : [
+            "el, en"
+         ],
+         "allowedUILanguages" : [
+            "el-GR"
+         ],
+         "defaultUILanguage" : "el-GR",
+         "currencies" : [
+            "EUR"
+         ],
+         "countryCodes" : [
+            "GR"
+         ],
+         "market" : "cookidoo.gr"
+      },
+      {
+         "name" : "Vietnam",
+         "marketCode" : "vn",
+         "phraseappMarketKey" : "vietnam",
+         "operator" : "VI",
+         "countries" : [
+            {
+               "name" : "Vietnam",
+               "code" : "VN"
+            }
+         ],
+         "mainCountry" : "VN",
+         "mainDomain" : "cookidoo.thermomix.vn",
+         "geoRegion" : "EU",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "VND",
+         "editorialContentLanguageTags" : [
+            "vi-VN, vi, en"
+         ],
+         "allowedUILanguages" : [
+            "vi-VN"
+         ],
+         "defaultUILanguage" : "vi-VN",
+         "currencies" : [
+            "VND"
+         ],
+         "countryCodes" : [
+            "VN"
+         ],
+         "market" : "cookidoo.thermomix.vn"
+      },
+      {
+         "name" : "international",
+         "marketCode" : "xp",
+         "phraseappMarketKey" : "international",
+         "operator" : "VI (Export)",
+         "countries" : [
+            {
+               "name" : "Argentina",
+               "code" : "AR"
+            },
+            {
+               "name" : "Brazil",
+               "code" : "BR"
+            },
+            {
+               "name" : "Bulgaria",
+               "code" : "BG"
+            },
+            {
+               "name" : "Chile",
+               "code" : "CL"
+            },
+            {
+               "name" : "Colombia",
+               "code" : "CO"
+            },
+            {
+               "name" : "Costa Rica",
+               "code" : "CR"
+            },
+            {
+               "name" : "Cyprus",
+               "code" : "CY"
+            },
+            {
+               "name" : "Denmark",
+               "code" : "DK"
+            },
+            {
+               "name" : "Guatemala",
+               "code" : "GT"
+            },
+            {
+               "name" : "Hungary",
+               "code" : "HU"
+            },
+            {
+               "name" : "Iceland",
+               "code" : "IS"
+            },
+            {
+               "name" : "Indonesia",
+               "code" : "ID"
+            },
+            {
+               "name" : "Kuwait",
+               "code" : "KW"
+            },
+            {
+               "name" : "Malta",
+               "code" : "MT"
+            },
+            {
+               "name" : "Malaysia",
+               "code" : "MY"
+            },
+            {
+               "name" : "Morocco",
+               "code" : "MA"
+            },
+            {
+               "name" : "Norway",
+               "code" : "NO"
+            },
+            {
+               "name" : "Panama",
+               "code" : "PA"
+            },
+            {
+               "name" : "Paraguay",
+               "code" : "PY"
+            },
+            {
+               "name" : "Peru",
+               "code" : "PE"
+            },
+            {
+               "name" : "Romania",
+               "code" : "RO"
+            },
+            {
+               "name" : "Saudi Arabia",
+               "code" : "SA"
+            },
+            {
+               "name" : "Singapore",
+               "code" : "SG"
+            },
+            {
+               "name" : "Sweden",
+               "code" : "SE"
+            },
+            {
+               "name" : "Tunisia",
+               "code" : "TN"
+            },
+            {
+               "name" : "South Africa",
+               "code" : "ZA"
+            },
+            {
+               "name" : "Ukraine",
+               "code" : "UA"
+            },
+            {
+               "name" : "Uruguay",
+               "code" : "UY"
+            },
+            {
+               "name" : "United Arab Emirates",
+               "code" : "AE"
+            },
+            {
+               "name" : "Egypt",
+               "code" : "EG"
+            },
+            {
+               "name" : "Estonia",
+               "code" : "EE"
+            },
+            {
+               "name" : "Lithuania",
+               "code" : "LT"
+            },
+            {
+               "name" : "Thailand",
+               "code" : "TH"
+            },
+            {
+               "name" : "Israel",
+               "code" : "IL"
+            },
+            {
+               "name" : "Philippines",
+               "code" : "PH"
+            }
+         ],
+         "mainDomain" : "cookidoo.international",
+         "awsRegion" : "EU",
+         "userBucket" : "Switzerland",
+         "mainCurrency" : "USD",
+         "editorialContentLanguageTags" : [
+            "en",
+            "fr, en",
+            "es, en",
+            "el, en",
+            "ro, en",
+            "hu, en",
+            "bg, en",
+            "pt-br, en"
+         ],
+         "defaultUILanguage" : "en",
+         "allowedUILanguages" : [
+            "en",
+            "fr",
+            "es",
+            "el",
+            "ro",
+            "hu",
+            "bg",
+            "pt-br"
+         ],
+         "currencies" : [
+            "USD"
+         ],
+         "countryCodes" : [
+            "AE",
+            "AR",
+            "BG",
+            "BR",
+            "CL",
+            "CO",
+            "CR",
+            "CY",
+            "DK",
+            "EE",
+            "GT",
+            "HU",
+            "IS",
+            "ID",
+            "KW",
+            "LT",
+            "MT",
+            "MY",
+            "MA",
+            "NO",
+            "PA",
+            "PY",
+            "PE",
+            "RO",
+            "SA",
+            "SG",
+            "SE",
+            "TN",
+            "TH",
+            "UA",
+            "UY",
+            "ZA"
+         ],
+         "market" : "cookidoo.international"
+      }
+   ]
+}
