@@ -33,9 +33,9 @@ def load_env(path: str) -> None:
 
 load_env('/home/DouweM/dev/cookidoo-re/.env')
 
-from firebase_messaging import FcmPushClient, FcmRegisterConfig  # noqa: E402
+from firebase_messaging import FcmPushClient, FcmRegisterConfig
 
-from cookidoo import CookidooClient  # noqa: E402
+from cookidoo import CookidooClient
 
 # App Firebase project (extracted from the decompiled APK resources).
 FCM = FcmRegisterConfig(
