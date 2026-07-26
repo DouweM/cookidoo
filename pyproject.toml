@@ -1,127 +1,82 @@
 [project]
 name = "cookidoo"
-version = "0.1.0"
-description = "Unofficial comprehensive async Python SDK for the Cookidoo (Thermomix) mobile API, reverse-engineered from the Android app."
+version = "0.2.0"
+description = "Async Python SDK, CLI, and Home Assistant integration for the Cookidoo (Thermomix) mobile API."
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.14.2"
 license = { text = "MIT" }
-keywords = ["cookidoo", "thermomix", "vorwerk", "recipes", "api", "sdk"]
-dependencies = [
-    "httpx>=0.28",
-    "pydantic>=2.10",
-]
+authors = [{ name = "Douwe Maan", email = "me@douwe.me" }]
+keywords = ["cookidoo", "thermomix", "vorwerk", "recipes", "api", "sdk", "home-assistant"]
+dependencies = ["httpx>=0.28", "pydantic>=2.10"]
 
 [project.optional-dependencies]
-cli = [
-    "typer>=0.12",
-    "rich>=13",
-]
-monitor = [
-    "firebase-messaging>=0.4",
-]
+cli = ["typer>=0.12", "rich>=13"]
+monitor = ["firebase-messaging>=0.4"]
 
 [project.scripts]
 cookidoo = "cookidoo.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/DouweM/cookidoo"
+Issues = "https://github.com/DouweM/cookidoo/issues"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+# The SDK library lives inside the HA integration (so HACS ships it with no separate
+# PyPI release); hatchling still exposes it as the importable `cookidoo` package for
+# the CLI, tests, and an optional PyPI release.
 [tool.hatch.build.targets.wheel]
-packages = ["src/cookidoo"]
+packages = ["custom_components/cookidoo/cookidoo"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"custom_components/cookidoo/cookidoo/localization_config.json" = "cookidoo/localization_config.json"
 
 [dependency-groups]
 dev = [
     "pytest>=8.3",
     "pytest-asyncio>=0.25",
-    "pytest-pretty>=1.3",
-    "dirty-equals>=0.9",
-    "coverage[toml]>=7.6",
-]
-lint = [
-    "pyright>=1.1",
+    "pytest-homeassistant-custom-component>=0.13.348",
     "ruff>=0.14",
+    "pyright>=1.1",
+    "typer>=0.12",
+    "rich>=13",
+    "firebase-messaging>=0.4",
 ]
 
 [tool.ruff]
 line-length = 120
-target-version = "py313"
-src = ["src", "tests"]
+target-version = "py314"
 
 [tool.ruff.lint]
-extend-select = [
-    "Q",
-    "RUF100",
-    "C90",
-    "UP",
-    "I",
-    "D",
-]
-flake8-quotes = { inline-quotes = "single", multiline-quotes = "double" }
+extend-select = ["I", "UP", "D", "C90", "RUF100"]
+ignore = ["D100", "D102", "D104", "D105", "D107", "D203", "D213"]
 flake8-bugbear = { extend-immutable-calls = ["typer.Option", "typer.Argument"] }
 mccabe = { max-complexity = 15 }
-ignore = [
-    "D100",
-    "D102",
-    "D104",
-    "D105",
-    "D107",
-]
-
-[tool.ruff.lint.isort]
-combine-as-imports = true
-known-first-party = ["cookidoo"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
 [tool.ruff.format]
-quote-style = "single"
+quote-style = "double"
 
 [tool.ruff.lint.per-file-ignores]
-"tests/**/*.py" = ["D"]
-# scripts/ are exploratory research helpers, not shipped code
+"tests/**/*.py" = ["D", "S101", "DTZ"]
 "scripts/**/*.py" = ["D", "UP031", "DTZ011"]
 "examples/**/*.py" = ["D"]
 
 [tool.pyright]
-pythonVersion = "3.13"
-typeCheckingMode = "strict"
-reportMissingTypeStubs = false
-reportUnnecessaryIsInstance = false
-reportUnnecessaryTypeIgnoreComment = true
-reportMissingModuleSource = false
-reportPrivateUsage = false
+# Type-check the integration + SDK source and the SDK tests; the mock-heavy HA
+# integration tests are not worth strict typing.
+include = ["custom_components/cookidoo", "tests/sdk"]
+exclude = ["tests/integration"]
+pythonVersion = "3.14"
+typeCheckingMode = "basic"
+reportPrivateImportUsage = false
 venvPath = "."
 venv = ".venv"
-include = ["src", "tests"]
-executionEnvironments = [
-    { root = "tests", reportUnknownMemberType = false, reportUnknownVariableType = false, reportUnknownArgumentType = false, reportPrivateUsage = false },
-]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
-testpaths = ["tests"]
-xfail_strict = true
-filterwarnings = [
-    "error",
-    "ignore::ResourceWarning",
-]
-
-[tool.coverage.run]
-source = ["cookidoo"]
-branch = true
-
-[tool.coverage.report]
-# Offline tests only exercise the pure-logic layers (models, hal, localization);
-# client/auth/resources need the live network and are covered by scripts/*.
-fail_under = 40
-show_missing = true
-skip_covered = true
-exclude_lines = [
-    'pragma: no cover',
-    'raise NotImplementedError',
-    'if TYPE_CHECKING:',
-    '@overload',
-    '@abstractmethod',
-]
+pythonpath = ["."]

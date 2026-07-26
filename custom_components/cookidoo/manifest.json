@@ -1,0 +1,14 @@
+{
+  "domain": "cookidoo",
+  "name": "Cookidoo",
+  "codeowners": ["@DouweM"],
+  "config_flow": true,
+  "documentation": "https://github.com/DouweM/ha-cookidoo",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/DouweM/ha-cookidoo/issues",
+  "loggers": ["cookidoo"],
+  "requirements": ["httpx>=0.28", "pydantic>=2.10"],
+  "single_config_entry": true,
+  "version": "0.1.0"
+}

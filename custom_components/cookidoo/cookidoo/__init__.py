@@ -14,19 +14,19 @@ from .exceptions import (
 from .localization import Market, all_markets, get_market
 
 __all__ = [
-    'CookidooAuthError',
-    'CookidooClient',
-    'CookidooConfigError',
-    'CookidooError',
-    'CookidooLinkError',
-    'CookidooParseError',
-    'CookidooRequestError',
-    'Market',
-    'Token',
-    'UserInfo',
-    'all_markets',
-    'get_market',
-    'models',
+    "CookidooAuthError",
+    "CookidooClient",
+    "CookidooConfigError",
+    "CookidooError",
+    "CookidooLinkError",
+    "CookidooParseError",
+    "CookidooRequestError",
+    "Market",
+    "Token",
+    "UserInfo",
+    "all_markets",
+    "get_market",
+    "models",
 ]
 
-__version__ = '0.1.0'
+__version__ = "0.1.0"

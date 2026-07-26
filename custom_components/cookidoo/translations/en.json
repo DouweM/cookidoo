@@ -1,0 +1,183 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect your Cookidoo account",
+        "data": {
+          "email": "Email",
+          "password": "Password",
+          "market": "Market"
+        },
+        "data_description": {
+          "email": "The email address of your Cookidoo account.",
+          "password": "The password of your Cookidoo account.",
+          "market": "The Cookidoo market (country) your account belongs to."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate your Cookidoo account",
+        "description": "The password for {email} is no longer valid. Enter your current password to continue.",
+        "data": {
+          "password": "Password"
+        },
+        "data_description": {
+          "password": "The password of your Cookidoo account."
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid authentication",
+      "cannot_connect": "Failed to connect"
+    },
+    "abort": {
+      "already_configured": "Account is already configured",
+      "reauth_successful": "Re-authentication was successful"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "language": "Language",
+          "scan_interval": "Update interval"
+        },
+        "data_description": {
+          "language": "The language used for recipe and ingredient content.",
+          "scan_interval": "How often, in seconds, to poll Cookidoo for updates."
+        }
+      }
+    }
+  },
+  "entity": {
+    "todo": {
+      "shopping_list": {
+        "name": "Shopping list"
+      },
+      "additional_items": {
+        "name": "Additional items"
+      }
+    },
+    "calendar": {
+      "meal_plan": {
+        "name": "Meal plan"
+      }
+    },
+    "sensor": {
+      "subscription_type": {
+        "name": "Subscription type",
+        "state": {
+          "free": "Free",
+          "trial": "Trial",
+          "premium": "Premium",
+          "regular": "Regular",
+          "other": "Other"
+        }
+      },
+      "subscription_status": {
+        "name": "Subscription status"
+      },
+      "subscription_expires": {
+        "name": "Subscription expires"
+      },
+      "shopping_list_items": {
+        "name": "Shopping list items"
+      },
+      "additional_items": {
+        "name": "Additional items"
+      },
+      "planned_meals": {
+        "name": "Planned meals"
+      },
+      "custom_recipes": {
+        "name": "Custom recipes"
+      },
+      "thermomix": {
+        "name": "Thermomix"
+      }
+    },
+    "button": {
+      "clear_shopping_list": {
+        "name": "Clear shopping list"
+      }
+    }
+  },
+  "exceptions": {
+    "auth_failed": {
+      "message": "Authentication with Cookidoo failed. Please re-authenticate."
+    },
+    "update_failed": {
+      "message": "Failed to fetch data from Cookidoo."
+    },
+    "no_config_entry": {
+      "message": "No loaded Cookidoo account was found."
+    }
+  },
+  "services": {
+    "add_recipe_to_shopping_list": {
+      "name": "Add recipe to shopping list",
+      "description": "Adds the ingredients of one or more recipes to your Cookidoo shopping list.",
+      "fields": {
+        "recipe_ids": {
+          "name": "Recipe IDs",
+          "description": "The IDs of the recipes whose ingredients should be added."
+        }
+      }
+    },
+    "add_items": {
+      "name": "Add items",
+      "description": "Adds free-text items to your Cookidoo shopping list.",
+      "fields": {
+        "items": {
+          "name": "Items",
+          "description": "The names of the items to add to the shopping list."
+        }
+      }
+    },
+    "add_recipe_to_plan": {
+      "name": "Add recipe to meal plan",
+      "description": "Adds one or more recipes to your Cookidoo meal plan for a given day.",
+      "fields": {
+        "date": {
+          "name": "Date",
+          "description": "The day to add the recipes to."
+        },
+        "recipe_ids": {
+          "name": "Recipe IDs",
+          "description": "The IDs of the recipes to add to the meal plan."
+        }
+      }
+    },
+    "remove_recipe_from_plan": {
+      "name": "Remove recipe from meal plan",
+      "description": "Removes a recipe from your Cookidoo meal plan for a given day.",
+      "fields": {
+        "date": {
+          "name": "Date",
+          "description": "The day to remove the recipe from."
+        },
+        "recipe_id": {
+          "name": "Recipe ID",
+          "description": "The ID of the recipe to remove from the meal plan."
+        }
+      }
+    },
+    "clear_shopping_list": {
+      "name": "Clear shopping list",
+      "description": "Removes all items from your Cookidoo shopping list."
+    },
+    "search_recipes": {
+      "name": "Search recipes",
+      "description": "Searches Cookidoo recipes and returns the matches.",
+      "fields": {
+        "query": {
+          "name": "Query",
+          "description": "The search text to look for."
+        },
+        "limit": {
+          "name": "Limit",
+          "description": "The maximum number of recipes to return."
+        }
+      }
+    }
+  }
+}

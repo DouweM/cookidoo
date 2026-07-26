@@ -23,7 +23,7 @@ import httpx
 from . import const
 from .exceptions import CookidooAuthError, CookidooParseError
 
-_REDIRECT_SCHEME = 'com.vorwerk.cookidoo://'
+_REDIRECT_SCHEME = "com.vorwerk.cookidoo://"
 _REQUEST_ID_RE = re.compile(
     r'name=["\']requestId["\'][^>]*value=["\']([^"\']+)["\']'
     r'|value=["\']([0-9a-fA-F-]{16,})["\'][^>]*name=["\']requestId["\']'
@@ -32,13 +32,13 @@ _FORM_ACTION_RE = re.compile(r'<form[^>]*action=["\']([^"\']+)["\']', re.IGNOREC
 
 
 def _b64url(data: bytes) -> str:
-    return base64.urlsafe_b64encode(data).rstrip(b'=').decode('ascii')
+    return base64.urlsafe_b64encode(data).rstrip(b"=").decode("ascii")
 
 
 def generate_pkce() -> tuple[str, str]:
     """Return ``(verifier, challenge)`` for PKCE S256."""
     verifier = _b64url(os.urandom(64))
-    challenge = _b64url(hashlib.sha256(verifier.encode('ascii')).digest())
+    challenge = _b64url(hashlib.sha256(verifier.encode("ascii")).digest())
     return verifier, challenge
 
 
@@ -73,39 +73,39 @@ class Token:
     def from_response(cls, data: dict[str, Any]) -> Self:
         """Build a token from an OAuth token-endpoint response."""
         try:
-            expires_in = int(data.get('expires_in', 3600))
-            id_token = data.get('id_token')
+            expires_in = int(data.get("expires_in", 3600))
+            id_token = data.get("id_token")
             return cls(
-                access_token=data['access_token'],
-                refresh_token=data.get('refresh_token'),
-                token_type=data.get('token_type', 'Bearer'),
+                access_token=data["access_token"],
+                refresh_token=data.get("refresh_token"),
+                token_type=data.get("token_type", "Bearer"),
                 id_token=id_token,
                 expires_at=time.time() + expires_in,
                 user=decode_id_token(id_token) if id_token else None,
             )
         except KeyError as e:
-            raise CookidooParseError(f'Token response missing field: {e}') from e
+            raise CookidooParseError(f"Token response missing field: {e}") from e
 
     def to_dict(self) -> dict[str, Any]:
         """Serialise the token set for caching (JSON-friendly)."""
         return {
-            'access_token': self.access_token,
-            'refresh_token': self.refresh_token,
-            'token_type': self.token_type,
-            'id_token': self.id_token,
-            'expires_at': self.expires_at,
+            "access_token": self.access_token,
+            "refresh_token": self.refresh_token,
+            "token_type": self.token_type,
+            "id_token": self.id_token,
+            "expires_at": self.expires_at,
         }
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Self:
         """Restore a token set previously produced by :meth:`to_dict`."""
-        id_token = data.get('id_token')
+        id_token = data.get("id_token")
         return cls(
-            access_token=data['access_token'],
-            refresh_token=data.get('refresh_token'),
-            token_type=data.get('token_type', 'Bearer'),
+            access_token=data["access_token"],
+            refresh_token=data.get("refresh_token"),
+            token_type=data.get("token_type", "Bearer"),
             id_token=id_token,
-            expires_at=float(data['expires_at']),
+            expires_at=float(data["expires_at"]),
             user=decode_id_token(id_token) if id_token else None,
         )
 
@@ -113,31 +113,31 @@ class Token:
 def decode_id_token(id_token: str) -> UserInfo | None:
     """Decode the JWT payload (segment 1) into :class:`UserInfo`. No signature check."""
     try:
-        payload_b64 = id_token.split('.')[1]
-        payload_b64 += '=' * (-len(payload_b64) % 4)
+        payload_b64 = id_token.split(".")[1]
+        payload_b64 += "=" * (-len(payload_b64) % 4)
         decoded = json.loads(base64.urlsafe_b64decode(payload_b64))
-    except (IndexError, ValueError, json.JSONDecodeError):
+    except IndexError, ValueError, json.JSONDecodeError:
         return None
     if not isinstance(decoded, dict):
         return None
-    payload = cast('dict[str, Any]', decoded)
-    custom = payload.get('customFields')
-    custom = cast('dict[str, Any]', custom) if isinstance(custom, dict) else {}
-    roles = payload.get('roles')
-    roles = cast('list[Any]', roles) if isinstance(roles, list) else []
+    payload = cast("dict[str, Any]", decoded)
+    custom = payload.get("customFields")
+    custom = cast("dict[str, Any]", custom) if isinstance(custom, dict) else {}
+    roles = payload.get("roles")
+    roles = cast("list[Any]", roles) if isinstance(roles, list) else []
     return UserInfo(
-        email=payload.get('email'),
-        given_name=payload.get('given_name'),
-        family_name=payload.get('family_name'),
-        dcid=payload.get('sub'),
+        email=payload.get("email"),
+        given_name=payload.get("given_name"),
+        family_name=payload.get("family_name"),
+        dcid=payload.get("sub"),
         roles=tuple(str(r) for r in roles),
-        country_of_residence=custom.get('country_of_residence'),
+        country_of_residence=custom.get("country_of_residence"),
     )
 
 
 def _basic_auth_header() -> str:
-    raw = f'{const.OAUTH_TOKEN_BASIC_USER}:{const.OAUTH_TOKEN_BASIC_PASS}'.encode()
-    return 'Basic ' + base64.b64encode(raw).decode('ascii')
+    raw = f"{const.OAUTH_TOKEN_BASIC_USER}:{const.OAUTH_TOKEN_BASIC_PASS}".encode()
+    return "Basic " + base64.b64encode(raw).decode("ascii")
 
 
 def _code_from_redirect(location: str) -> str | None:
@@ -146,10 +146,10 @@ def _code_from_redirect(location: str) -> str | None:
     Raises :class:`CookidooAuthError` if the redirect carries an OAuth ``error``.
     """
     query = parse_qs(urlsplit(location).query)
-    if 'error' in query:
-        desc = query.get('error_description', [''])
-        raise CookidooAuthError(f'Authorization failed: {query["error"][0]} {desc[0]}')
-    codes = query.get('code')
+    if "error" in query:
+        desc = query.get("error_description", [""])
+        raise CookidooAuthError(f"Authorization failed: {query['error'][0]} {desc[0]}")
+    codes = query.get("code")
     return codes[0] if codes else None
 
 
@@ -159,7 +159,7 @@ async def _follow_to_code(http: httpx.AsyncClient, response: httpx.Response, *, 
     Returns the authorization ``code`` if found, else ``None``.
     """
     for _ in range(max_hops):
-        location = response.headers.get('location')
+        location = response.headers.get("location")
         if location is None:
             return None
         if location.startswith(_REDIRECT_SCHEME):
@@ -179,7 +179,7 @@ class Authenticator:
         password: str,
         market: str,
         *,
-        ui_locale: str = 'en-US',
+        ui_locale: str = "en-US",
     ) -> None:
         self._email = email
         self._password = password
@@ -192,21 +192,21 @@ class Authenticator:
         state = _b64url(os.urandom(16))
 
         authorize_params = {
-            'response_type': const.OAUTH_RESPONSE_TYPE,
-            'client_id': const.OAUTH_CLIENT_ID,
-            'redirect_uri': const.OAUTH_REDIRECT_URI,
-            'market': self._market,
-            'scope': const.OAUTH_SCOPE,
-            'state': state,
-            'code_challenge': challenge,
-            'code_challenge_method': const.OAUTH_CODE_CHALLENGE_METHOD,
-            'ui_locales': self._ui_locale,
+            "response_type": const.OAUTH_RESPONSE_TYPE,
+            "client_id": const.OAUTH_CLIENT_ID,
+            "redirect_uri": const.OAUTH_REDIRECT_URI,
+            "market": self._market,
+            "scope": const.OAUTH_SCOPE,
+            "state": state,
+            "code_challenge": challenge,
+            "code_challenge_method": const.OAUTH_CODE_CHALLENGE_METHOD,
+            "ui_locales": self._ui_locale,
         }
 
         # 1. GET authorize -> follow redirects to the CIAM login page.
         resp = await http.get(authorization_endpoint, params=authorize_params, follow_redirects=True)
         if resp.status_code != 200:
-            raise CookidooAuthError(f'Could not reach login page (status {resp.status_code}).')
+            raise CookidooAuthError(f"Could not reach login page (status {resp.status_code}).")
         login_html = resp.text
         login_url = str(resp.url)
 
@@ -214,20 +214,20 @@ class Authenticator:
         m = _REQUEST_ID_RE.search(login_html)
         if not m:
             raise CookidooAuthError(
-                'Could not locate requestId on the CIAM login page (login page layout may have changed).'
+                "Could not locate requestId on the CIAM login page (login page layout may have changed)."
             )
         request_id = m.group(1) or m.group(2)
         action_m = _FORM_ACTION_RE.search(login_html)
-        action = action_m.group(1) if action_m else '/login-srv/login'
+        action = action_m.group(1) if action_m else "/login-srv/login"
         login_post_url = str(httpx.URL(login_url).join(action))
 
         # 3. POST credentials; do NOT auto-follow (custom scheme breaks httpx).
         post = await http.post(
             login_post_url,
             data={
-                'requestId': request_id,
-                'username': self._email,
-                'password': self._password,
+                "requestId": request_id,
+                "username": self._email,
+                "password": self._password,
             },
             follow_redirects=False,
         )
@@ -240,7 +240,7 @@ class Authenticator:
             if loc and loc.startswith(_REDIRECT_SCHEME):
                 code = _code_from_redirect(loc)
         if not code:
-            raise CookidooAuthError('Login did not yield an authorization code — check email/password.')
+            raise CookidooAuthError("Login did not yield an authorization code — check email/password.")
 
         # 4. Exchange code for tokens.
         return await self._exchange(http, token_endpoint, code=code, verifier=verifier)
@@ -249,39 +249,39 @@ class Authenticator:
         resp = await http.post(
             token_endpoint,
             data={
-                'code': code,
-                'grant_type': 'authorization_code',
-                'redirect_uri': const.OAUTH_REDIRECT_URI,
-                'code_verifier': verifier,
+                "code": code,
+                "grant_type": "authorization_code",
+                "redirect_uri": const.OAUTH_REDIRECT_URI,
+                "code_verifier": verifier,
             },
             headers={
-                'Authorization': _basic_auth_header(),
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Cookie': const.OAUTH_TOKEN_COOKIE,
+                "Authorization": _basic_auth_header(),
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Cookie": const.OAUTH_TOKEN_COOKIE,
             },
             follow_redirects=False,
         )
         if resp.status_code != 200:
-            raise CookidooAuthError(f'Token exchange failed (status {resp.status_code}): {resp.text[:300]}')
+            raise CookidooAuthError(f"Token exchange failed (status {resp.status_code}): {resp.text[:300]}")
         return Token.from_response(resp.json())
 
     async def refresh(self, http: httpx.AsyncClient, token_endpoint: str, refresh_token: str) -> Token:
         """Refresh an access token using the stored refresh token."""
         resp = await http.post(
             token_endpoint,
-            data={'grant_type': 'refresh_token', 'refresh_token': refresh_token},
+            data={"grant_type": "refresh_token", "refresh_token": refresh_token},
             headers={
-                'Authorization': _basic_auth_header(),
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Cookie': const.OAUTH_TOKEN_COOKIE,
+                "Authorization": _basic_auth_header(),
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Cookie": const.OAUTH_TOKEN_COOKIE,
             },
             follow_redirects=False,
         )
         if resp.status_code != 200:
-            raise CookidooAuthError(f'Token refresh failed (status {resp.status_code}). Re-login required.')
+            raise CookidooAuthError(f"Token refresh failed (status {resp.status_code}). Re-login required.")
         data = resp.json()
         # some providers omit refresh_token on refresh; keep the old one
-        data.setdefault('refresh_token', refresh_token)
+        data.setdefault("refresh_token", refresh_token)
         return Token.from_response(data)
 
 

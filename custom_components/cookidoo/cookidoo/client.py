@@ -34,9 +34,9 @@ if TYPE_CHECKING:
         ShoppingResource,
     )
 
-_LOGGER = logging.getLogger('cookidoo')
+_LOGGER = logging.getLogger("cookidoo")
 
-_R = TypeVar('_R')
+_R = TypeVar("_R")
 
 
 class CookidooClient:
@@ -54,10 +54,10 @@ class CookidooClient:
         self,
         email: str,
         password: str,
-        market: str = 'xp',
+        market: str = "xp",
         *,
         language: str | None = None,
-        environment: str = 'prod',
+        environment: str = "prod",
         token: Token | None = None,
         http: httpx.AsyncClient | None = None,
         timeout: float = 30.0,
@@ -75,8 +75,8 @@ class CookidooClient:
         self._http = http or httpx.AsyncClient(
             timeout=timeout,
             headers={
-                'User-Agent': const.USER_AGENT,
-                'Accept-Language': self._language,
+                "User-Agent": const.USER_AGENT,
+                "Accept-Language": self._language,
             },
         )
 
@@ -122,7 +122,7 @@ class CookidooClient:
         """Fetch (and cache) the root ``/.well-known/mobile-home`` link map."""
         if self._root_links is None:
             url = self._base_url + const.HOME_DOCUMENT_PATH
-            doc = await self._request('GET', url, accept=const.HOME_ACCEPT, authenticated=False)
+            doc = await self._request("GET", url, accept=const.HOME_ACCEPT, authenticated=False)
             self._root_links = parse_links(doc)
         return self._root_links
 
@@ -133,7 +133,7 @@ class CookidooClient:
         if root_rel not in self._subdoc_links:
             link = require_link(await self.root_links(), root_rel)
             doc = await self._request(
-                'GET',
+                "GET",
                 link.expand(lang=self._language),
                 accept=accept or const.HOME_ACCEPT,
                 authenticated=authenticated,
@@ -155,7 +155,7 @@ class CookidooClient:
         ``vars`` are used to expand URI templates; ``lang`` defaults to the
         configured language.
         """
-        vars.setdefault('lang', self._language)
+        vars.setdefault("lang", self._language)
         if sub_rel is None:
             link = require_link(await self.root_links(), root_rel)
         else:
@@ -174,11 +174,11 @@ class CookidooClient:
                 accept=const.HOME_ACCEPT,
                 authenticated=False,
             )
-            doc = await self._request('GET', disc_url, authenticated=False)
+            doc = await self._request("GET", disc_url, authenticated=False)
             try:
-                self._oidc = (doc['authorization_endpoint'], doc['token_endpoint'])
+                self._oidc = (doc["authorization_endpoint"], doc["token_endpoint"])
             except (KeyError, TypeError) as e:
-                raise CookidooParseError('OpenID discovery document malformed') from e
+                raise CookidooParseError("OpenID discovery document malformed") from e
         return self._oidc
 
     # ------------------------------------------------------------------ auth
@@ -187,7 +187,7 @@ class CookidooClient:
         """Authenticate and store a token. Auto-corrects the market if needed."""
         authorize, token_url = await self.oidc_endpoints()
         self._token = await self._auth.login(self._http, authorize, token_url)
-        _LOGGER.info('Logged in as %s', self._token.user.email if self._token.user else '?')
+        _LOGGER.info("Logged in as %s", self._token.user.email if self._token.user else "?")
         return self._token
 
     async def ensure_token(self) -> Token:
@@ -201,7 +201,7 @@ class CookidooClient:
                     self._token = await self._auth.refresh(self._http, token_url, self._token.refresh_token)
                     return self._token
                 except CookidooAuthError:
-                    _LOGGER.info('Refresh failed, re-authenticating')
+                    _LOGGER.info("Refresh failed, re-authenticating")
             return await self.login()
         return self._token
 
@@ -248,21 +248,27 @@ class CookidooClient:
         authenticated: bool = True,
         _retry: bool = True,
     ) -> Any:
-        hdrs: dict[str, str] = {'Accept': accept or 'application/json'}
+        # App headers are applied per-request (not only on an owned client) so a
+        # caller-supplied shared client (e.g. Home Assistant's) still sends them.
+        hdrs: dict[str, str] = {
+            "Accept": accept or "application/json",
+            "User-Agent": const.USER_AGENT,
+            "Accept-Language": self._language,
+        }
         if content_type:
-            hdrs['Content-Type'] = content_type
+            hdrs["Content-Type"] = content_type
         if headers:
             hdrs.update(headers)
         if authenticated:
             token = await self.ensure_token()
-            hdrs['Authorization'] = f'Bearer {token.access_token}'
+            hdrs["Authorization"] = f"Bearer {token.access_token}"
 
         try:
             resp = await self._http.request(method, url, json=json, params=params, headers=hdrs, follow_redirects=True)
         except httpx.TimeoutException as e:
-            raise CookidooRequestError(f'{method} {url} timed out') from e
+            raise CookidooRequestError(f"{method} {url} timed out") from e
         except httpx.HTTPError as e:
-            raise CookidooRequestError(f'{method} {url} failed: {e}') from e
+            raise CookidooRequestError(f"{method} {url} failed: {e}") from e
 
         if resp.status_code == 401 and authenticated and _retry:
             # token may have just expired server-side; force refresh once
@@ -279,22 +285,22 @@ class CookidooClient:
                 _retry=False,
             )
         if resp.status_code == 401:
-            raise CookidooAuthError(f'Unauthorized: {method} {url}')
+            raise CookidooAuthError(f"Unauthorized: {method} {url}")
         if resp.status_code == 204 or not resp.content:
             return None
         if not resp.is_success:
             raise CookidooRequestError(
-                f'{method} {url} -> {resp.status_code}',
+                f"{method} {url} -> {resp.status_code}",
                 status=resp.status_code,
                 body=resp.text[:500],
             )
-        ctype = resp.headers.get('content-type', '')
-        if 'json' not in ctype and 'hal' not in ctype:
+        ctype = resp.headers.get("content-type", "")
+        if "json" not in ctype and "hal" not in ctype:
             return resp.text
         try:
             return resp.json()
         except ValueError as e:
-            raise CookidooParseError(f'Invalid JSON from {url}') from e
+            raise CookidooParseError(f"Invalid JSON from {url}") from e
 
     # ------------------------------------------------------------------ resources
 
@@ -303,88 +309,88 @@ class CookidooClient:
         if cached is None:
             cached = factory(self)
             self._resources[name] = cached
-        return cast('_R', cached)
+        return cast("_R", cached)
 
     @property
     def recipes(self) -> RecipesResource:
         """Recipe details, variants, ratings, and personal notes."""
         from .resources import RecipesResource
 
-        return self._resource('recipes', RecipesResource)
+        return self._resource("recipes", RecipesResource)
 
     @property
     def search(self) -> SearchResource:
         """Recipe and ingredient search."""
         from .resources import SearchResource
 
-        return self._resource('search', SearchResource)
+        return self._resource("search", SearchResource)
 
     @property
     def shopping(self) -> ShoppingResource:
         """The shopping list (the "pantry" service)."""
         from .resources import ShoppingResource
 
-        return self._resource('shopping', ShoppingResource)
+        return self._resource("shopping", ShoppingResource)
 
     @property
     def planner(self) -> PlannerResource:
         """The meal planner (weekly calendar)."""
         from .resources import PlannerResource
 
-        return self._resource('planner', PlannerResource)
+        return self._resource("planner", PlannerResource)
 
     @property
     def collections(self) -> CollectionsResource:
         """Custom lists, bookmarks, and shared collections."""
         from .resources import CollectionsResource
 
-        return self._resource('collections', CollectionsResource)
+        return self._resource("collections", CollectionsResource)
 
     @property
     def custom_recipes(self) -> CustomRecipesResource:
         """User-created ("customer") recipes."""
         from .resources import CustomRecipesResource
 
-        return self._resource('custom_recipes', CustomRecipesResource)
+        return self._resource("custom_recipes", CustomRecipesResource)
 
     @property
     def recommendations(self) -> RecommendationsResource:
         """Personalized recommendations (For You feed, similar recipes)."""
         from .resources import RecommendationsResource
 
-        return self._resource('recommendations', RecommendationsResource)
+        return self._resource("recommendations", RecommendationsResource)
 
     @property
     def profile(self) -> ProfileResource:
         """User profile, community profile, and subscriptions."""
         from .resources import ProfileResource
 
-        return self._resource('profile', ProfileResource)
+        return self._resource("profile", ProfileResource)
 
     @property
     def devices(self) -> DevicesResource:
         """Registered Thermomix devices, accessories, and remote monitoring."""
         from .resources import DevicesResource
 
-        return self._resource('devices', DevicesResource)
+        return self._resource("devices", DevicesResource)
 
     @property
     def assistant(self) -> AssistantResource:
         """Cookidoo AI assistant (copilot)."""
         from .resources import AssistantResource
 
-        return self._resource('assistant', AssistantResource)
+        return self._resource("assistant", AssistantResource)
 
     @property
     def notifications(self) -> NotificationsResource:
         """The mobile notification center."""
         from .resources import NotificationsResource
 
-        return self._resource('notifications', NotificationsResource)
+        return self._resource("notifications", NotificationsResource)
 
     @property
     def config(self) -> ConfigResource:
         """Remote mobile app configuration and feature toggles."""
         from .resources import ConfigResource
 
-        return self._resource('config', ConfigResource)
+        return self._resource("config", ConfigResource)

@@ -33,7 +33,7 @@ class CookidooLinkError(CookidooError):
 
     def __init__(self, rel: str) -> None:
         super().__init__(
-            f'API link relation {rel!r} is not available for this account/market. '
-            'It may require a different subscription tier or be unsupported in your region.'
+            f"API link relation {rel!r} is not available for this account/market. "
+            "It may require a different subscription tier or be unsupported in your region."
         )
         self.rel = rel

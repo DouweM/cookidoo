@@ -16,7 +16,7 @@ from urllib.parse import quote
 
 from .exceptions import CookidooLinkError, CookidooParseError
 
-_UNRESERVED = '-._~'  # kept unencoded in addition to alnum
+_UNRESERVED = "-._~"  # kept unencoded in addition to alnum
 
 
 @dataclass(frozen=True)
@@ -35,20 +35,20 @@ class Link:
 
 def parse_links(obj: Mapping[str, Any]) -> dict[str, Link]:
     """Parse the ``_links`` object of a HAL document into ``{rel: Link}``."""
-    raw = obj.get('_links', obj)
+    raw = obj.get("_links", obj)
     if not isinstance(raw, Mapping):
         raise CookidooParseError("Document has no valid '_links' object")
-    links_obj = cast('Mapping[str, Any]', raw)
+    links_obj = cast("Mapping[str, Any]", raw)
     result: dict[str, Link] = {}
     for rel, val in links_obj.items():
-        if isinstance(val, Mapping) and 'href' in val:
-            link = cast('Mapping[str, Any]', val)
-            result[rel] = Link(href=str(link['href']), templated=bool(link.get('templated', False)))
+        if isinstance(val, Mapping) and "href" in val:
+            link = cast("Mapping[str, Any]", val)
+            result[rel] = Link(href=str(link["href"]), templated=bool(link.get("templated", False)))
         elif isinstance(val, list):  # array of links: keep first
-            for entry in cast('list[Any]', val):
-                if isinstance(entry, Mapping) and 'href' in entry:
-                    link = cast('Mapping[str, Any]', entry)
-                    result[rel] = Link(href=str(link['href']), templated=bool(link.get('templated', False)))
+            for entry in cast("list[Any]", val):
+                if isinstance(entry, Mapping) and "href" in entry:
+                    link = cast("Mapping[str, Any]", entry)
+                    result[rel] = Link(href=str(link["href"]), templated=bool(link.get("templated", False)))
                     break
     return result
 
@@ -62,7 +62,7 @@ def require_link(links: Mapping[str, Link], rel: str) -> Link:
 
 # --- RFC 6570 URI template expansion (Levels 1-4, the subset the API uses) ---
 
-_EXPR = re.compile(r'\{([+#./;?&]?)([^}]+)\}')
+_EXPR = re.compile(r"\{([+#./;?&]?)([^}]+)\}")
 
 
 def _encode(value: str, allow_reserved: bool) -> str:
@@ -84,60 +84,60 @@ def expand_uri_template(template: str, variables: Mapping[str, Any]) -> str:  # 
         operator = match.group(1)
         varspec = match.group(2)
 
-        sep, prefix, named, allow_reserved = ',', '', False, False
-        if operator == '+':
+        sep, prefix, named, allow_reserved = ",", "", False, False
+        if operator == "+":
             allow_reserved = True
-        elif operator == '#':
-            prefix, allow_reserved = '#', True
-        elif operator == '.':
-            sep, prefix = '.', '.'
-        elif operator == '/':
-            sep, prefix = '/', '/'
-        elif operator == ';':
-            sep, prefix, named = ';', ';', True
-        elif operator == '?':
-            sep, prefix, named = '&', '?', True
-        elif operator == '&':
-            sep, prefix, named = '&', '&', True
+        elif operator == "#":
+            prefix, allow_reserved = "#", True
+        elif operator == ".":
+            sep, prefix = ".", "."
+        elif operator == "/":
+            sep, prefix = "/", "/"
+        elif operator == ";":
+            sep, prefix, named = ";", ";", True
+        elif operator == "?":
+            sep, prefix, named = "&", "?", True
+        elif operator == "&":
+            sep, prefix, named = "&", "&", True
 
         parts: list[str] = []
-        for spec in varspec.split(','):
-            explode = spec.endswith('*')
+        for spec in varspec.split(","):
+            explode = spec.endswith("*")
             name = spec[:-1] if explode else spec
-            name = re.sub(r':\d+$', '', name)  # ignore prefix modifier length
+            name = re.sub(r":\d+$", "", name)  # ignore prefix modifier length
             if name not in variables or variables[name] is None:
                 continue
             value: Any = variables[name]
 
             if isinstance(value, (list, tuple)):
-                seq = cast('list[Any]', value)
+                seq = cast("list[Any]", value)
                 items = [_encode(str(v), allow_reserved) for v in seq if v is not None]
                 if not items:
                     continue
                 if named:
                     if explode:
-                        parts.extend(f'{name}={v}' for v in items)
+                        parts.extend(f"{name}={v}" for v in items)
                     else:
-                        parts.append(f'{name}={",".join(items)}')
+                        parts.append(f"{name}={','.join(items)}")
                 else:
-                    parts.append((sep if explode else ',').join(items))
+                    parts.append((sep if explode else ",").join(items))
             elif isinstance(value, dict):
-                mapping = cast('dict[str, Any]', value)
+                mapping = cast("dict[str, Any]", value)
                 pairs = [(str(k), _encode(str(v), allow_reserved)) for k, v in mapping.items() if v is not None]
                 if explode:
-                    parts.extend(f'{k}={v}' for k, v in pairs)
+                    parts.extend(f"{k}={v}" for k, v in pairs)
                 else:
-                    flat = ','.join(f'{k},{v}' for k, v in pairs)
-                    parts.append(f'{name}={flat}' if named else flat)
+                    flat = ",".join(f"{k},{v}" for k, v in pairs)
+                    parts.append(f"{name}={flat}" if named else flat)
             else:
                 enc = _encode(str(value), allow_reserved)
                 if named:
-                    parts.append(f'{name}={enc}' if enc != '' else name)
+                    parts.append(f"{name}={enc}" if enc != "" else name)
                 else:
                     parts.append(enc)
 
         if not parts:
-            return ''
+            return ""
         return prefix + sep.join(parts)
 
     return _EXPR.sub(replace, template)

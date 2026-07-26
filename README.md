@@ -28,7 +28,9 @@ The known ecosystem ([`miaucl/cookidoo-api`](https://github.com/miaucl/cookidoo-
 ```bash
 pip install cookidoo         # or, from a clone: pip install -e .
 ```
-Requires Python ≥ 3.13. Depends only on `httpx` and `pydantic>=2`.
+Requires Python ≥ 3.14. Depends only on `httpx` and `pydantic>=2`.
+
+This repo is also a **Home Assistant integration** — see [Home Assistant](#home-assistant) below.
 
 ## Quickstart
 
@@ -38,22 +40,22 @@ from cookidoo import CookidooClient
 
 
 async def main():
-    async with CookidooClient('you@example.com', 'password', market='mx') as cc:
+    async with CookidooClient("you@example.com", "password", market="mx") as cc:
         await cc.login()  # PKCE OAuth2, discovers endpoints via HAL
         me = await cc.get_user_info()  # decoded from id_token, no extra call
         print(me.email, me.country_of_residence, me.roles)
 
         # search + full recipe
-        hits = await cc.search.recipes('pasta', limit=5)
+        hits = await cc.search.recipes("pasta", limit=5)
         recipe = await cc.recipes.get(hits.recipes[0].id)
         print(recipe.title, recipe.difficulty, recipe.thermomix_versions)
         for group in recipe.recipe_ingredient_groups:
             for ing in group.recipe_ingredients:
-                print(' -', ing.name, ing.quantity.value if ing.quantity else '', ing.unit_notation)
+                print(" -", ing.name, ing.quantity.value if ing.quantity else "", ing.unit_notation)
 
         # shopping list
         sl = await cc.shopping.get_list()
-        print(len(sl.ingredients()), 'ingredients on the list')
+        print(len(sl.ingredients()), "ingredients on the list")
 
         # meal planner
         week = await cc.planner.get_week()  # this week
@@ -123,7 +125,7 @@ models; every model keeps unmapped fields in `.model_extra`.
   Needs the `monitor` extra (`pip install 'cookidoo[monitor]'`).
 
   ```python
-  async for status in cc.devices.watch_cooking(credentials_path='~/.cache/cookidoo/fcm.json'):
+  async for status in cc.devices.watch_cooking(credentials_path="~/.cache/cookidoo/fcm.json"):
       print(status.state, status.remaining_seconds, status.primary_info)
       if status.finished:
           break
@@ -142,11 +144,11 @@ models; every model keeps unmapped fields in `.model_extra`.
 Anything not wrapped is one line away — resolve any HAL relation and call it:
 
 ```python
-url = await cc.resolve('tmde2:foundation', 'foundation:subscription')
-data = await cc.request_json('GET', url)
+url = await cc.resolve("tmde2:foundation", "foundation:subscription")
+data = await cc.request_json("GET", url)
 # discover everything the API offers for your account:
 print(await cc.root_links())  # 31 top-level relations
-print(await cc.subdoc_links('tmde2:copilot'))  # assistant endpoints
+print(await cc.subdoc_links("tmde2:copilot"))  # assistant endpoints
 ```
 
 ## CLI (agent-friendly)
@@ -181,6 +183,27 @@ r493976  Beef tacos  4.43★
 r919810  Tacos de pollo al pastor  4.3★
 r116096  Chilli Tacos  4.7★
 ```
+
+## Home Assistant
+
+This repo doubles as a HACS-installable **Home Assistant integration** (the SDK is
+vendored inside it at `custom_components/cookidoo/cookidoo/`, so no PyPI release is
+needed — the same pattern as `pyvaonis`). It goes beyond the official integration:
+
+| Platform | Entities |
+|---|---|
+| **To-do** | Shopping list (tick ingredients) · Additional items (full CRUD) |
+| **Calendar** | Meal plan — planned recipes as events, with images + deep links |
+| **Sensor** | Planned meals · item counts · custom recipes · Thermomix model · subscription type/status/expiry |
+| **Button** | Clear shopping list |
+
+Plus 6 services (`add_recipe_to_shopping_list`, `add_items`, `add_recipe_to_plan`,
+`remove_recipe_from_plan`, `search_recipes` [with response], `clear_shopping_list`)
+and an options flow (language + poll interval).
+
+**Install:** HACS → Custom repositories → add this repo (category *Integration*) →
+install → restart → add the **Cookidoo** integration and enter your email, password,
+and market.
 
 ## Auth details (reverse-engineered)
 

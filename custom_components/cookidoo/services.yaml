@@ -1,0 +1,60 @@
+add_recipe_to_shopping_list:
+  fields:
+    recipe_ids:
+      required: true
+      example: "r123456"
+      selector:
+        text:
+          multiple: true
+
+add_items:
+  fields:
+    items:
+      required: true
+      example: "Olive oil"
+      selector:
+        text:
+          multiple: true
+
+add_recipe_to_plan:
+  fields:
+    date:
+      required: true
+      selector:
+        date:
+    recipe_ids:
+      required: true
+      example: "r123456"
+      selector:
+        text:
+          multiple: true
+
+remove_recipe_from_plan:
+  fields:
+    date:
+      required: true
+      selector:
+        date:
+    recipe_id:
+      required: true
+      example: "r123456"
+      selector:
+        text:
+
+clear_shopping_list:
+
+search_recipes:
+  fields:
+    query:
+      required: true
+      example: "chocolate cake"
+      selector:
+        text:
+    limit:
+      required: false
+      default: 10
+      selector:
+        number:
+          min: 1
+          max: 100
+          mode: box

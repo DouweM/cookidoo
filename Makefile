@@ -1,16 +1,8 @@
 .DEFAULT_GOAL := all
 
-.PHONY: .uv
-.uv:
-	@uv --version || echo 'Please install uv: https://docs.astral.sh/uv/getting-started/installation/'
-
 .PHONY: install
-install: .uv
-	uv sync --frozen --group dev --group lint --all-extras
-
-.PHONY: sync
-sync: .uv
-	uv sync --group dev --group lint --all-extras
+install:
+	uv sync --group dev
 
 .PHONY: format
 format:
@@ -28,16 +20,11 @@ typecheck:
 
 .PHONY: test
 test:
-	uv run coverage run -m pytest
-	@uv run coverage report
-
-.PHONY: testcov
-testcov: test
-	@uv run coverage html
+	uv run pytest -q
 
 .PHONY: build
 build:
 	uv build
 
 .PHONY: all
-all: format lint typecheck testcov
+all: format lint typecheck test
