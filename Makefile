@@ -6,11 +6,11 @@
 
 .PHONY: install
 install: .uv
-	uv sync --frozen --group dev --group lint
+	uv sync --frozen --group dev --group lint --extra cli
 
 .PHONY: sync
 sync: .uv
-	uv sync --group dev --group lint
+	uv sync --group dev --group lint --extra cli
 
 .PHONY: format
 format:

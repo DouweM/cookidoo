@@ -11,6 +11,15 @@ dependencies = [
     "pydantic>=2.10",
 ]
 
+[project.optional-dependencies]
+cli = [
+    "typer>=0.12",
+    "rich>=13",
+]
+
+[project.scripts]
+cookidoo = "cookidoo.cli:app"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
@@ -46,6 +55,7 @@ extend-select = [
     "D",
 ]
 flake8-quotes = { inline-quotes = "single", multiline-quotes = "double" }
+flake8-bugbear = { extend-immutable-calls = ["typer.Option", "typer.Argument"] }
 mccabe = { max-complexity = 15 }
 ignore = [
     "D100",

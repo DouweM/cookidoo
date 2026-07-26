@@ -86,6 +86,29 @@ class Token:
         except KeyError as e:
             raise CookidooParseError(f'Token response missing field: {e}') from e
 
+    def to_dict(self) -> dict[str, Any]:
+        """Serialise the token set for caching (JSON-friendly)."""
+        return {
+            'access_token': self.access_token,
+            'refresh_token': self.refresh_token,
+            'token_type': self.token_type,
+            'id_token': self.id_token,
+            'expires_at': self.expires_at,
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> Self:
+        """Restore a token set previously produced by :meth:`to_dict`."""
+        id_token = data.get('id_token')
+        return cls(
+            access_token=data['access_token'],
+            refresh_token=data.get('refresh_token'),
+            token_type=data.get('token_type', 'Bearer'),
+            id_token=id_token,
+            expires_at=float(data['expires_at']),
+            user=decode_id_token(id_token) if id_token else None,
+        )
+
 
 def decode_id_token(id_token: str) -> UserInfo | None:
     """Decode the JWT payload (segment 1) into :class:`UserInfo`. No signature check."""

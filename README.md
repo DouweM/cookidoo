@@ -139,6 +139,38 @@ print(await cc.root_links())  # 31 top-level relations
 print(await cc.subdoc_links('tmde2:copilot'))  # assistant endpoints
 ```
 
+## CLI (agent-friendly)
+
+Install the CLI extra and you get a `cookidoo` command covering the app's five tabs:
+
+```bash
+pip install 'cookidoo[cli]'
+export COOKIDOO_USERNAME=you@example.com COOKIDOO_PASSWORD=… COOKIDOO_MARKET=mx
+```
+
+| App tab | Command |
+|---|---|
+| **Para ti** | `cookidoo for-you [--full]` |
+| **Navegar** | `cookidoo search "tacos" -n 5` · `cookidoo recipe r493976 [--steps] [--nutrition]` |
+| **Mis recetas** | `cookidoo my-recipes list\|show\|create\|delete` · `cookidoo collections list\|create\|add\|delete` |
+| **Mi semana** | `cookidoo week show [DATE]` · `cookidoo week add 2026-08-01 r493976` · `cookidoo week remove …` |
+| **Compras** | `cookidoo shopping list\|add-recipes\|add\|check\|remove\|clear` |
+| (extras) | `cookidoo whoami` · `cookidoo rate r493976 5` · `cookidoo notes get\|set\|delete` |
+
+Built for automation:
+- **JSON by default** when stdout isn't a TTY (or `--json`); a rich table view in a terminal (or `--pretty`).
+- **Cached bearer token** (`$XDG_CACHE_HOME/cookidoo/…`, mode 600) so repeated agent calls don't re-login — a warm `whoami` returns in well under a second.
+- Errors are `{"error": …}` on stderr with a non-zero exit code.
+
+```console
+$ cookidoo whoami
+{"email": "you@example.com", "country": "MX", "subscription": {"type": "REGULAR", "status": "ACTIVE"}, "devices": ["TM6"], ...}
+$ cookidoo search tacos -n 3 | jq -r '.results[] | "\(.id)  \(.title)  \(.rating)★"'
+r493976  Beef tacos  4.43★
+r919810  Tacos de pollo al pastor  4.3★
+r116096  Chilli Tacos  4.7★
+```
+
 ## Auth details (reverse-engineered)
 
 - OAuth2 **authorization-code + PKCE (S256)**, `client_id=mobile-android`,
