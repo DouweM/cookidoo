@@ -116,10 +116,20 @@ models; every model keeps unmapped fields in `.model_extra`.
 
 ### `cc.devices`
 - `thermomix_versions()`, `accessory_ids()`.
-- `monitored_devices()` and `register_push_token(...)` — the **remote-monitoring**
-  (RMI) IoT gateway. Live cooking status is delivered by the app via **Firebase
-  Cloud Messaging** data-push; this SDK can register/list devices and send handovers,
-  but receiving live push frames requires an FCM client (out of scope for a server SDK).
+- **`watch_cooking()`** — an async generator yielding live `CookingStatus` frames
+  from a connected Thermomix while it cooks a Guided recipe. It registers as a
+  Firebase Cloud Messaging client (the app's push transport), subscribes the token
+  with the IoT gateway, and streams `state`, `remaining_seconds`, step text, etc.
+  Needs the `monitor` extra (`pip install 'cookidoo[monitor]'`).
+
+  ```python
+  async for status in cc.devices.watch_cooking(credentials_path='~/.cache/cookidoo/fcm.json'):
+      print(status.state, status.remaining_seconds, status.primary_info)
+      if status.finished:
+          break
+  ```
+- `register_push_token(...)` / `unregister_push_token(...)` / `monitored_devices()`
+  for lower-level control of the RMI IoT gateway.
 
 ### `cc.assistant`  (the "copilot" AI service)
 - `tips()` (GET). The chat itself is a hosted WebView in the app, not a JSON API,
@@ -156,6 +166,7 @@ export COOKIDOO_USERNAME=you@example.com COOKIDOO_PASSWORD=… COOKIDOO_MARKET=m
 | **Mi semana** | `cookidoo week show [DATE]` · `cookidoo week add 2026-08-01 r493976` · `cookidoo week remove …` |
 | **Compras** | `cookidoo shopping list\|add-recipes\|add\|check\|remove\|clear` |
 | (extras) | `cookidoo whoami` · `cookidoo rate r493976 5` · `cookidoo notes get\|set\|delete` |
+| **live cooking** | `cookidoo monitor [--once] [--timeout N]` — stream your Thermomix's cooking status (needs the `monitor` extra + a device cooking a Guided recipe) |
 
 Built for automation:
 - **JSON by default** when stdout isn't a TTY (or `--json`); a rich table view in a terminal (or `--pretty`).

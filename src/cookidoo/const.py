@@ -45,6 +45,17 @@ OAUTH_TOKEN_BASIC_PASS: Final = 'kautGGimGLJgpXQaAZUHqRsuz4bKUw'
 # Required cookie on token requests, a_plugin/o6.java @Headers.
 OAUTH_TOKEN_COOKIE: Final = 'vrkPreAccessGranted=true'
 
+# --- Remote monitoring (RMI) + Firebase Cloud Messaging (live cooking status) ---
+# Header required on the IoT gateway (a_plugin/fbf.java @Headers).
+RMI_API_VERSION: Final = '2026-06-01'
+# Android package (used as bundleId when registering a push token).
+ANDROID_PACKAGE: Final = 'com.vorwerk.cookidoo'
+# Firebase project of the app (res/values/strings.xml). App-public, in every APK.
+FIREBASE_PROJECT_ID: Final = 'cookidoo-app'
+FIREBASE_APP_ID: Final = '1:447648593759:android:ebfbf2b01378844b'
+FIREBASE_API_KEY: Final = 'AIzaSyCPyZm8EAdpVhWhNLFv3cOw_Kx4iNxR_E4'
+FIREBASE_SENDER_ID: Final = '447648593759'
+
 
 # Root home document HAL relations (RootHomeLinksDto). All prefixed ``tmde2:``.
 class Rel:

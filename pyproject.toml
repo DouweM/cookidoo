@@ -16,6 +16,9 @@ cli = [
     "typer>=0.12",
     "rich>=13",
 ]
+monitor = [
+    "firebase-messaging>=0.4",
+]
 
 [project.scripts]
 cookidoo = "cookidoo.cli:app"

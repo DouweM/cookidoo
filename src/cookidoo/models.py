@@ -319,6 +319,49 @@ class RecipeNote(_Base):
     modified_at: Annotated[str | None, Field(alias='modifiedAt')] = None
 
 
+class CookingStatus(_Base):
+    """A live cooking-status frame pushed from a connected Thermomix (via FCM).
+
+    Firebase data messages are string-valued, so raw fields are strings; the
+    ``remaining_seconds`` / ``time_estimated`` helpers give typed views.
+    """
+
+    id: str | None = None
+    state: str | None = None  # running | paused | done | acknowledged | stale
+    device_id: Annotated[str | None, Field(alias='deviceId')] = None
+    recipe_id: Annotated[str | None, Field(alias='recipeId')] = None
+    recipe_type: Annotated[str | None, Field(alias='recipeType')] = None  # VorwerkRecipe | CreatedRecipe
+    remaining_duration: Annotated[str | None, Field(alias='remainingDuration')] = None
+    is_time_estimated: Annotated[str | None, Field(alias='isTimeEstimated')] = None
+    primary_info: Annotated[str | None, Field(alias='primaryInfo')] = None
+    secondary_info: Annotated[str | None, Field(alias='secondaryInfo')] = None
+    leading: str | None = None
+    trailing_text: Annotated[str | None, Field(alias='trailingText')] = None
+    message_title: Annotated[str | None, Field(alias='messageTitle')] = None
+    message_body: Annotated[str | None, Field(alias='messageBody')] = None
+    message_criticality: Annotated[str | None, Field(alias='messageCriticality')] = None  # info | warning | error
+    completed_date: Annotated[str | None, Field(alias='completedDate')] = None
+    stale_date: Annotated[str | None, Field(alias='staleDate')] = None
+
+    @property
+    def remaining_seconds(self) -> int | None:
+        """Remaining time in seconds, if numeric."""
+        try:
+            return int(self.remaining_duration) if self.remaining_duration is not None else None
+        except (TypeError, ValueError):
+            return None
+
+    @property
+    def time_estimated(self) -> bool:
+        """Whether the remaining time is an estimate."""
+        return str(self.is_time_estimated).lower() == 'true'
+
+    @property
+    def finished(self) -> bool:
+        """Whether cooking has completed."""
+        return self.state in {'done', 'acknowledged'}
+
+
 class SearchResult(_Base):
     """A recipe search response."""
 

@@ -19,8 +19,9 @@ import hashlib
 import json
 import os
 import sys
+import uuid
 from collections.abc import Awaitable, Callable
-from contextlib import asynccontextmanager
+from contextlib import aclosing, asynccontextmanager
 from datetime import UTC, date, datetime
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
@@ -317,6 +318,60 @@ def rate(
     """Navegar — set your personal star rating for a recipe."""
     _run(lambda cc: cc.recipes.set_user_rating(recipe_id, stars))
     emit({'recipe_id': recipe_id, 'rating': stars})
+
+
+@app.command()
+def monitor(
+    once: bool = typer.Option(False, '--once', help='Exit after the first status frame.'),
+    timeout: float = typer.Option(0.0, '--timeout', help='Stop after N seconds (0 = until interrupted).'),
+) -> None:
+    """Stream live cooking status from a connected Thermomix (needs the 'monitor' extra).
+
+    Requires the TM6 online and actively cooking a Guided recipe. Emits one JSON
+    line per status frame (state, step info, time remaining).
+    """
+    cache = Path(os.environ.get('XDG_CACHE_HOME', Path.home() / '.cache')) / 'cookidoo'
+    cache.mkdir(parents=True, exist_ok=True)
+    appid_file = cache / 'mobile_app_id.txt'
+    app_id = appid_file.read_text().strip() if appid_file.exists() else str(uuid.uuid4())
+    appid_file.write_text(app_id)
+
+    async def _do(cc: CookidooClient) -> dict[str, Any]:
+        count = 0
+
+        async def _stream() -> None:
+            nonlocal count
+            gen = cc.devices.watch_cooking(credentials_path=cache / 'fcm_creds.json', mobile_app_id=app_id)
+            async with aclosing(gen) as frames:
+                async for status in frames:
+                    if STATE.json:
+                        print(
+                            json.dumps(status.model_dump(by_alias=True, exclude_none=True), ensure_ascii=False),
+                            flush=True,
+                        )
+                    else:
+                        secs = status.remaining_seconds
+                        _out.print(
+                            f'[bold]{status.state or "?"}[/]  '
+                            f'{status.primary_info or status.message_title or ""}  '
+                            f'· {secs if secs is not None else "?"}s left'
+                        )
+                    count += 1
+                    if once:
+                        break
+
+        if timeout > 0:
+            try:
+                async with asyncio.timeout(timeout):
+                    await _stream()
+            except TimeoutError:
+                pass
+        else:
+            await _stream()
+        return {'frames': count}
+
+    result = _run(_do)
+    _err.print(json.dumps(result))
 
 
 # --------------------------------------------------------------------------- Mis recetas

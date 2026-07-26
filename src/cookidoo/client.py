@@ -221,6 +221,7 @@ class CookidooClient:
         params: Mapping[str, Any] | None = None,
         accept: str | None = None,
         content_type: str | None = None,
+        headers: Mapping[str, str] | None = None,
     ) -> Any:
         """Authenticated JSON request helper used by resource classes."""
         return await self._request(
@@ -230,6 +231,7 @@ class CookidooClient:
             params=params,
             accept=accept,
             content_type=content_type,
+            headers=headers,
             authenticated=True,
         )
 
@@ -242,20 +244,21 @@ class CookidooClient:
         params: Mapping[str, Any] | None = None,
         accept: str | None = None,
         content_type: str | None = None,
+        headers: Mapping[str, str] | None = None,
         authenticated: bool = True,
         _retry: bool = True,
     ) -> Any:
-        headers: dict[str, str] = {'Accept': accept or 'application/json'}
+        hdrs: dict[str, str] = {'Accept': accept or 'application/json'}
         if content_type:
-            headers['Content-Type'] = content_type
+            hdrs['Content-Type'] = content_type
+        if headers:
+            hdrs.update(headers)
         if authenticated:
             token = await self.ensure_token()
-            headers['Authorization'] = f'Bearer {token.access_token}'
+            hdrs['Authorization'] = f'Bearer {token.access_token}'
 
         try:
-            resp = await self._http.request(
-                method, url, json=json, params=params, headers=headers, follow_redirects=True
-            )
+            resp = await self._http.request(method, url, json=json, params=params, headers=hdrs, follow_redirects=True)
         except httpx.TimeoutException as e:
             raise CookidooRequestError(f'{method} {url} timed out') from e
         except httpx.HTTPError as e:
@@ -271,6 +274,7 @@ class CookidooClient:
                 params=params,
                 accept=accept,
                 content_type=content_type,
+                headers=headers,
                 authenticated=authenticated,
                 _retry=False,
             )

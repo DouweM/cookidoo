@@ -6,12 +6,17 @@ Mutating request bodies/verbs mirror the reverse-engineered app contract
 
 from __future__ import annotations
 
+import asyncio
+import json
 import time
-from collections.abc import Sequence
+import uuid
+from collections.abc import AsyncGenerator, Sequence
 from datetime import UTC, date, datetime
+from pathlib import Path
 from typing import TYPE_CHECKING, Any, cast
 
 from . import const
+from .exceptions import CookidooError
 from .models import (
     AdditionalItem,
     AggregatedRating,
@@ -19,6 +24,7 @@ from .models import (
     CalendarWeek,
     Collection,
     CommunityProfile,
+    CookingStatus,
     CustomRecipe,
     ForYouFeed,
     Recipe,
@@ -404,18 +410,90 @@ class DevicesResource(_Resource):
     async def monitored_devices(self, nonce: str | None = None) -> Any:
         """Devices currently reachable for remote monitoring (IoT gateway)."""
         url = await self._c.resolve(R.RMI_CONFIG, 'rmi:devices', nonce=nonce or str(int(time.time())))
-        return await self._c.request_json('GET', url)
+        return await self._c.request_json('GET', url, headers={'rmi-api-version': const.RMI_API_VERSION})
 
     async def register_push_token(self, token: str, mobile_app_id: str) -> Any:
-        """Register an FCM token to receive live cooking-status push updates."""
+        """Register an FCM push token so the IoT gateway pushes cooking status to it."""
         url = await self._c.resolve(R.RMI_CONFIG, 'rmi:register-token')
-        body = {'token': token, 'bundleId': const.OAUTH_CLIENT_ID, 'platform': 'AN', 'mobileAppId': mobile_app_id}
+        body = {'token': token, 'bundleId': const.ANDROID_PACKAGE, 'platform': 'AN', 'mobileAppId': mobile_app_id}
         return await self._c.request_json(
+            'POST', url, json=body, content_type='application/json', headers={'rmi-api-version': const.RMI_API_VERSION}
+        )
+
+    async def unregister_push_token(self, token: str) -> None:
+        """Stop the IoT gateway pushing to a previously-registered FCM token."""
+        url = await self._c.resolve(R.RMI_CONFIG, 'rmi:unregister')
+        await self._c.request_json(
             'POST',
             url,
-            json=body,
+            json={'entries': [{'token': token}]},
             content_type='application/json',
+            headers={'rmi-api-version': const.RMI_API_VERSION},
         )
+
+    async def watch_cooking(
+        self,
+        *,
+        credentials_path: str | Path | None = None,
+        mobile_app_id: str | None = None,
+    ) -> AsyncGenerator[CookingStatus]:
+        """Yield live :class:`CookingStatus` frames from a connected Thermomix.
+
+        Registers as a Firebase Cloud Messaging client (using the app's Firebase
+        project), registers that token with Cookidoo's IoT gateway, then streams
+        each status push. Requires the ``monitor`` extra (``firebase-messaging``).
+
+        Parameters
+        ----------
+        credentials_path
+            Where to persist FCM device credentials so the push token stays stable
+            across runs. If omitted, an ephemeral registration is used.
+        mobile_app_id
+            A stable per-install id sent to the gateway; a random one is generated
+            if omitted.
+
+        Yields:
+            CookingStatus frames as they are pushed (state, step, time remaining…).
+        """
+        try:
+            from firebase_messaging import FcmPushClient, FcmRegisterConfig
+        except ModuleNotFoundError as exc:  # pragma: no cover
+            raise CookidooError("Cooking monitor needs the 'monitor' extra: pip install 'cookidoo[monitor]'") from exc
+
+        creds: dict[str, Any] | None = None
+        creds_file = Path(credentials_path) if credentials_path else None
+        if creds_file and creds_file.exists():
+            creds = json.loads(creds_file.read_text())
+
+        def save_creds(updated: dict[str, Any]) -> None:
+            if creds_file:
+                creds_file.parent.mkdir(parents=True, exist_ok=True)
+                creds_file.write_text(json.dumps(updated))
+
+        app_id = mobile_app_id or str(uuid.uuid4())
+        config = FcmRegisterConfig(
+            project_id=const.FIREBASE_PROJECT_ID,
+            app_id=const.FIREBASE_APP_ID,
+            api_key=const.FIREBASE_API_KEY,
+            messaging_sender_id=const.FIREBASE_SENDER_ID,
+            bundle_id=const.ANDROID_PACKAGE,
+        )
+        queue: asyncio.Queue[CookingStatus] = asyncio.Queue()
+
+        def on_push(notification: dict[str, Any], _persistent_id: str, _ctx: object) -> None:
+            payload: Any = notification.get('data', notification)
+            queue.put_nowait(CookingStatus.model_validate(payload))
+
+        client = FcmPushClient(on_push, config, creds, save_creds)
+        fcm_token = await client.checkin_or_register()
+        await self.register_push_token(fcm_token, app_id)
+        await client.start()
+        try:
+            while True:
+                yield await queue.get()
+        finally:
+            await self.unregister_push_token(fcm_token)
+            await client.stop()
 
 
 # --------------------------------------------------------------------------- assistant (copilot)
